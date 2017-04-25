@@ -1,10 +1,10 @@
-module uart_rcv(clk, rst_n, RX, rx_data, rx_rdy, rx_rdy_clr);
+module uart_rcv(clk, rst_n, RX, rx_data, rx_rdy, clr_rx_rdy);
 
 // Define state type
 typedef enum reg {IDLE, RECIEVE} STATE;
 
 // Inputs / outputs
-input clk, rst_n, RX, rx_rdy_clr;
+input clk, rst_n, RX, clr_rx_rdy;
 output [7:0] rx_data;
 output reg rx_rdy;
 
@@ -83,7 +83,7 @@ always_comb begin
 						index_rst = 1;
 						rx_rdy_clear = 1;
 					end
-					else if (rx_rdy_clr) rx_rdy_clear = 1;
+					else if (clr_rx_rdy) rx_rdy_clear = 1;
 					else next_state = IDLE;
 				end
 		RECIEVE	:	begin

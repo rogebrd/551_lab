@@ -1,12 +1,12 @@
-module uart_tx(clk, rst_n, TX, trmt, tx_data, tx_done);
+module uart_tx(clk, rst_n, tx, strt_tx, tx_data, tx_done);
 
 // Define state type
 typedef enum reg {IDLE, TRANSMIT} STATE;
 
 // Inputs / outputs
-input clk, rst_n, trmt;
+input clk, rst_n, strt_tx;
 input [7:0] tx_data;
-output reg TX, tx_done;
+output reg tx, tx_done;
 
 // Internal nodes
 reg [9:0] shift;
@@ -45,8 +45,8 @@ always @(posedge clk, negedge rst_n) begin
 end
 
 ////////////////////////////////////////////////////////////////////////////////
-// TX line
-assign TX = shift[0];
+// tx line
+assign tx = shift[0];
 
 ////////////////////////////////////////////////////////////////////////////////
 // State flops
@@ -68,7 +68,7 @@ always_comb begin
 	tx_done = 1;
 	case (state)
 		IDLE		:begin
-					if (trmt) begin
+					if (strt_tx) begin
 						next_state = TRANSMIT;
 						shift_load = 1;
 						baud_rst = 1;
@@ -82,7 +82,7 @@ always_comb begin
 						shift_en = 1;
 						if (index >= 4'h9) begin
 							index_rst = 1;
-							if (trmt) begin
+							if (strt_tx) begin
 								next_state = TRANSMIT;
 								shift_load = 1;
 								baud_rst = 1;

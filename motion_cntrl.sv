@@ -1,16 +1,11 @@
-module motion_cntrl(clk, rst_n, go, cnv_cmplt, A2D_res, start_conv, chnnl, IR_in_en, IR_mid_en, IR_out_en, LEDs, lft, rht);
-	
-
-//NOTES:
-// - Should Pterm & Iterm be hardcoded as params?
-// - Are we waiting 2 cycles for multiplication?
+module motion_cntrl(clk, rst_n, go, cnv_cmplt, A2D_res, strt_cnv, chnnl, IR_in_en, IR_mid_en, IR_out_en, LEDs, lft, rht);
 
 	//inputs
 	input clk, rst_n, go, cnv_cmplt;
 	input[11:0] A2D_res;
 	
 	//outputs
-	output reg start_conv;
+	output reg strt_cnv;
 	output reg IR_in_en, IR_mid_en, IR_out_en;
 	output reg[2:0] chnnl;
 	output[7:0] LEDs;
@@ -50,7 +45,7 @@ module motion_cntrl(clk, rst_n, go, cnv_cmplt, A2D_res, start_conv, chnnl, IR_in
 	//pwm vars
 	reg pwm;
 	reg[7:0] duty = 8'h8C;
-	pwm pwm_motion(.duty(duty), .rst_n(rst_n), .clk(clk), .out(pwm));
+	pwm_motion pwm_motion(.duty(duty), .rst_n(rst_n), .clk(clk), .out(pwm));
 
 
 	//timer logic
@@ -166,7 +161,7 @@ module motion_cntrl(clk, rst_n, go, cnv_cmplt, A2D_res, start_conv, chnnl, IR_in
 	always @ (*) begin
 		timer_en = 0;
 		timer_rst = 0;
-		start_conv = 0;
+		strt_cnv = 0;
 		//alu defaults
 		sub = 0;
 		multiply = 0;
@@ -224,7 +219,7 @@ module motion_cntrl(clk, rst_n, go, cnv_cmplt, A2D_res, start_conv, chnnl, IR_in
 						timer_en = 1;
 						if(timer == 64'd4095) begin
 							n_state = A2D_1;
-							start_conv = 1;
+							strt_cnv = 1;
 						end else
 							n_state = CONV;
 					end
@@ -264,7 +259,7 @@ module motion_cntrl(clk, rst_n, go, cnv_cmplt, A2D_res, start_conv, chnnl, IR_in
 						//wait 32 clks
 						if(timer == 64'h0000020) begin
 							n_state = A2D_2;
-							start_conv = 1;
+							strt_cnv = 1;
 						end else
 							n_state = ALU_1;
 					end
