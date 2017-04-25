@@ -1,0 +1,3300 @@
+// Error = 0 hex 0 decimal
+// conversion 1 for error number 0
+@0 fff
+@1 fff
+@2 fff
+@3 fff
+@4 fff
+@5 fff
+@6 fff
+@7 fff
+// conversion 2 for error number 0
+@8 fff
+@9 fff
+@a fff
+@b fff
+@c fff
+@d fff
+@e fff
+@f fff
+// conversion 3 for error number 0
+@10 fff
+@11 fff
+@12 fff
+@13 fff
+@14 fff
+@15 fff
+@16 fff
+@17 fff
+// conversion 4 for error number 0
+@18 fff
+@19 fff
+@1a fff
+@1b fff
+@1c fff
+@1d fff
+@1e fff
+@1f fff
+// conversion 5 for error number 0
+@20 fff
+@21 fff
+@22 fff
+@23 fff
+@24 fff
+@25 fff
+@26 fff
+@27 fff
+// conversion 6 for error number 0
+@28 fff
+@29 fff
+@2a fff
+@2b fff
+@2c fff
+@2d fff
+@2e fff
+@2f fff
+// Error = 397 hex 919 decimal
+// conversion 1 for error number 1
+@30 fff
+@31 f68
+@32 fff
+@33 fff
+@34 e7f
+@35 fff
+@36 fff
+@37 fff
+// conversion 2 for error number 1
+@38 fff
+@39 f68
+@3a fff
+@3b fff
+@3c e7f
+@3d fff
+@3e fff
+@3f fff
+// conversion 3 for error number 1
+@40 fff
+@41 f68
+@42 fff
+@43 fff
+@44 e7f
+@45 fff
+@46 fff
+@47 fff
+// conversion 4 for error number 1
+@48 fff
+@49 f68
+@4a fff
+@4b fff
+@4c e7f
+@4d fff
+@4e fff
+@4f fff
+// conversion 5 for error number 1
+@50 fff
+@51 f68
+@52 fff
+@53 fff
+@54 e7f
+@55 fff
+@56 fff
+@57 fff
+// conversion 6 for error number 1
+@58 fff
+@59 f68
+@5a fff
+@5b fff
+@5c e7f
+@5d fff
+@5e fff
+@5f fff
+// Error = 5b9 hex 1465 decimal
+// conversion 1 for error number 2
+@60 fff
+@61 fff
+@62 fff
+@63 e91
+@64 fff
+@65 fff
+@66 fff
+@67 fff
+// conversion 2 for error number 2
+@68 fff
+@69 fff
+@6a fff
+@6b e91
+@6c fff
+@6d fff
+@6e fff
+@6f fff
+// conversion 3 for error number 2
+@70 fff
+@71 fff
+@72 fff
+@73 e91
+@74 fff
+@75 fff
+@76 fff
+@77 fff
+// conversion 4 for error number 2
+@78 fff
+@79 fff
+@7a fff
+@7b e91
+@7c fff
+@7d fff
+@7e fff
+@7f fff
+// conversion 5 for error number 2
+@80 fff
+@81 fff
+@82 fff
+@83 e91
+@84 fff
+@85 fff
+@86 fff
+@87 fff
+// conversion 6 for error number 2
+@88 fff
+@89 fff
+@8a fff
+@8b e91
+@8c fff
+@8d fff
+@8e fff
+@8f fff
+// Error = 615 hex 1557 decimal
+// conversion 1 for error number 3
+@90 fff
+@91 fff
+@92 fff
+@93 e7f
+@94 ff5
+@95 fff
+@96 fff
+@97 fff
+// conversion 2 for error number 3
+@98 fff
+@99 fff
+@9a fff
+@9b e7f
+@9c ff5
+@9d fff
+@9e fff
+@9f fff
+// conversion 3 for error number 3
+@a0 fff
+@a1 fff
+@a2 fff
+@a3 e7f
+@a4 ff5
+@a5 fff
+@a6 fff
+@a7 fff
+// conversion 4 for error number 3
+@a8 fff
+@a9 fff
+@aa fff
+@ab e7f
+@ac ff5
+@ad fff
+@ae fff
+@af fff
+// conversion 5 for error number 3
+@b0 fff
+@b1 fff
+@b2 fff
+@b3 e7f
+@b4 ff5
+@b5 fff
+@b6 fff
+@b7 fff
+// conversion 6 for error number 3
+@b8 fff
+@b9 fff
+@ba fff
+@bb e7f
+@bc ff5
+@bd fff
+@be fff
+@bf fff
+// Error = 4d9 hex 1241 decimal
+// conversion 1 for error number 4
+@c0 fff
+@c1 fff
+@c2 fff
+@c3 ec9
+@c4 fff
+@c5 fff
+@c6 fff
+@c7 fff
+// conversion 2 for error number 4
+@c8 fff
+@c9 fff
+@ca fff
+@cb ec9
+@cc fff
+@cd fff
+@ce fff
+@cf fff
+// conversion 3 for error number 4
+@d0 fff
+@d1 fff
+@d2 fff
+@d3 ec9
+@d4 fff
+@d5 fff
+@d6 fff
+@d7 fff
+// conversion 4 for error number 4
+@d8 fff
+@d9 fff
+@da fff
+@db ec9
+@dc fff
+@dd fff
+@de fff
+@df fff
+// conversion 5 for error number 4
+@e0 fff
+@e1 fff
+@e2 fff
+@e3 ec9
+@e4 fff
+@e5 fff
+@e6 fff
+@e7 fff
+// conversion 6 for error number 4
+@e8 fff
+@e9 fff
+@ea fff
+@eb ec9
+@ec fff
+@ed fff
+@ee fff
+@ef fff
+// Error = 294 hex 660 decimal
+// conversion 1 for error number 5
+@f0 fff
+@f1 fff
+@f2 fff
+@f3 fff
+@f4 eb5
+@f5 fff
+@f6 fff
+@f7 fff
+// conversion 2 for error number 5
+@f8 fff
+@f9 fff
+@fa fff
+@fb fff
+@fc eb5
+@fd fff
+@fe fff
+@ff fff
+// conversion 3 for error number 5
+@100 fff
+@101 fff
+@102 fff
+@103 fff
+@104 eb5
+@105 fff
+@106 fff
+@107 fff
+// conversion 4 for error number 5
+@108 fff
+@109 fff
+@10a fff
+@10b fff
+@10c eb5
+@10d fff
+@10e fff
+@10f fff
+// conversion 5 for error number 5
+@110 fff
+@111 fff
+@112 fff
+@113 fff
+@114 eb5
+@115 fff
+@116 fff
+@117 fff
+// conversion 6 for error number 5
+@118 fff
+@119 fff
+@11a fff
+@11b fff
+@11c eb5
+@11d fff
+@11e fff
+@11f fff
+// Error = 1 hex 1 decimal
+// conversion 1 for error number 6
+@120 fff
+@121 ffe
+@122 fff
+@123 fff
+@124 fff
+@125 fff
+@126 fff
+@127 fff
+// conversion 2 for error number 6
+@128 fff
+@129 ffe
+@12a fff
+@12b fff
+@12c fff
+@12d fff
+@12e fff
+@12f fff
+// conversion 3 for error number 6
+@130 fff
+@131 ffe
+@132 fff
+@133 fff
+@134 fff
+@135 fff
+@136 fff
+@137 fff
+// conversion 4 for error number 6
+@138 fff
+@139 ffe
+@13a fff
+@13b fff
+@13c fff
+@13d fff
+@13e fff
+@13f fff
+// conversion 5 for error number 6
+@140 fff
+@141 ffe
+@142 fff
+@143 fff
+@144 fff
+@145 fff
+@146 fff
+@147 fff
+// conversion 6 for error number 6
+@148 fff
+@149 ffe
+@14a fff
+@14b fff
+@14c fff
+@14d fff
+@14e fff
+@14f fff
+// Error = fffffdd4 hex -556 decimal
+// conversion 1 for error number 7
+@150 fff
+@151 fff
+@152 ee9
+@153 fff
+@154 fff
+@155 fff
+@156 fff
+@157 fff
+// conversion 2 for error number 7
+@158 fff
+@159 fff
+@15a ee9
+@15b fff
+@15c fff
+@15d fff
+@15e fff
+@15f fff
+// conversion 3 for error number 7
+@160 fff
+@161 fff
+@162 ee9
+@163 fff
+@164 fff
+@165 fff
+@166 fff
+@167 fff
+// conversion 4 for error number 7
+@168 fff
+@169 fff
+@16a ee9
+@16b fff
+@16c fff
+@16d fff
+@16e fff
+@16f fff
+// conversion 5 for error number 7
+@170 fff
+@171 fff
+@172 ee9
+@173 fff
+@174 fff
+@175 fff
+@176 fff
+@177 fff
+// conversion 6 for error number 7
+@178 fff
+@179 fff
+@17a ee9
+@17b fff
+@17c fff
+@17d fff
+@17e fff
+@17f fff
+// Error = fffffc88 hex -888 decimal
+// conversion 1 for error number 8
+@180 f87
+@181 fff
+@182 e7f
+@183 fff
+@184 fff
+@185 fff
+@186 fff
+@187 fff
+// conversion 2 for error number 8
+@188 f87
+@189 fff
+@18a e7f
+@18b fff
+@18c fff
+@18d fff
+@18e fff
+@18f fff
+// conversion 3 for error number 8
+@190 f87
+@191 fff
+@192 e7f
+@193 fff
+@194 fff
+@195 fff
+@196 fff
+@197 fff
+// conversion 4 for error number 8
+@198 f87
+@199 fff
+@19a e7f
+@19b fff
+@19c fff
+@19d fff
+@19e fff
+@19f fff
+// conversion 5 for error number 8
+@1a0 f87
+@1a1 fff
+@1a2 e7f
+@1a3 fff
+@1a4 fff
+@1a5 fff
+@1a6 fff
+@1a7 fff
+// conversion 6 for error number 8
+@1a8 f87
+@1a9 fff
+@1aa e7f
+@1ab fff
+@1ac fff
+@1ad fff
+@1ae fff
+@1af fff
+// Error = fffffc50 hex -944 decimal
+// conversion 1 for error number 9
+@1b0 f4f
+@1b1 fff
+@1b2 e7f
+@1b3 fff
+@1b4 fff
+@1b5 fff
+@1b6 fff
+@1b7 fff
+// conversion 2 for error number 9
+@1b8 f4f
+@1b9 fff
+@1ba e7f
+@1bb fff
+@1bc fff
+@1bd fff
+@1be fff
+@1bf fff
+// conversion 3 for error number 9
+@1c0 f4f
+@1c1 fff
+@1c2 e7f
+@1c3 fff
+@1c4 fff
+@1c5 fff
+@1c6 fff
+@1c7 fff
+// conversion 4 for error number 9
+@1c8 f4f
+@1c9 fff
+@1ca e7f
+@1cb fff
+@1cc fff
+@1cd fff
+@1ce fff
+@1cf fff
+// conversion 5 for error number 9
+@1d0 f4f
+@1d1 fff
+@1d2 e7f
+@1d3 fff
+@1d4 fff
+@1d5 fff
+@1d6 fff
+@1d7 fff
+// conversion 6 for error number 9
+@1d8 f4f
+@1d9 fff
+@1da e7f
+@1db fff
+@1dc fff
+@1dd fff
+@1de fff
+@1df fff
+// Error = fffffd0f hex -753 decimal
+// conversion 1 for error number 10
+@1e0 fff
+@1e1 fff
+@1e2 e87
+@1e3 fff
+@1e4 fff
+@1e5 fff
+@1e6 fff
+@1e7 fff
+// conversion 2 for error number 10
+@1e8 fff
+@1e9 fff
+@1ea e87
+@1eb fff
+@1ec fff
+@1ed fff
+@1ee fff
+@1ef fff
+// conversion 3 for error number 10
+@1f0 fff
+@1f1 fff
+@1f2 e87
+@1f3 fff
+@1f4 fff
+@1f5 fff
+@1f6 fff
+@1f7 fff
+// conversion 4 for error number 10
+@1f8 fff
+@1f9 fff
+@1fa e87
+@1fb fff
+@1fc fff
+@1fd fff
+@1fe fff
+@1ff fff
+// conversion 5 for error number 10
+@200 fff
+@201 fff
+@202 e87
+@203 fff
+@204 fff
+@205 fff
+@206 fff
+@207 fff
+// conversion 6 for error number 10
+@208 fff
+@209 fff
+@20a e87
+@20b fff
+@20c fff
+@20d fff
+@20e fff
+@20f fff
+// Error = fffffe6f hex -401 decimal
+// conversion 1 for error number 11
+@210 fff
+@211 fff
+@212 f37
+@213 fff
+@214 fff
+@215 fff
+@216 fff
+@217 fff
+// conversion 2 for error number 11
+@218 fff
+@219 fff
+@21a f37
+@21b fff
+@21c fff
+@21d fff
+@21e fff
+@21f fff
+// conversion 3 for error number 11
+@220 fff
+@221 fff
+@222 f37
+@223 fff
+@224 fff
+@225 fff
+@226 fff
+@227 fff
+// conversion 4 for error number 11
+@228 fff
+@229 fff
+@22a f37
+@22b fff
+@22c fff
+@22d fff
+@22e fff
+@22f fff
+// conversion 5 for error number 11
+@230 fff
+@231 fff
+@232 f37
+@233 fff
+@234 fff
+@235 fff
+@236 fff
+@237 fff
+// conversion 6 for error number 11
+@238 fff
+@239 fff
+@23a f37
+@23b fff
+@23c fff
+@23d fff
+@23e fff
+@23f fff
+// Error = fffffffe hex -2 decimal
+// conversion 1 for error number 12
+@240 ffd
+@241 fff
+@242 fff
+@243 fff
+@244 fff
+@245 fff
+@246 fff
+@247 fff
+// conversion 2 for error number 12
+@248 ffd
+@249 fff
+@24a fff
+@24b fff
+@24c fff
+@24d fff
+@24e fff
+@24f fff
+// conversion 3 for error number 12
+@250 ffd
+@251 fff
+@252 fff
+@253 fff
+@254 fff
+@255 fff
+@256 fff
+@257 fff
+// conversion 4 for error number 12
+@258 ffd
+@259 fff
+@25a fff
+@25b fff
+@25c fff
+@25d fff
+@25e fff
+@25f fff
+// conversion 5 for error number 12
+@260 ffd
+@261 fff
+@262 fff
+@263 fff
+@264 fff
+@265 fff
+@266 fff
+@267 fff
+// conversion 6 for error number 12
+@268 ffd
+@269 fff
+@26a fff
+@26b fff
+@26c fff
+@26d fff
+@26e fff
+@26f fff
+// Error = 150 hex 336 decimal
+// conversion 1 for error number 13
+@270 fff
+@271 eaf
+@272 fff
+@273 fff
+@274 fff
+@275 fff
+@276 fff
+@277 fff
+// conversion 2 for error number 13
+@278 fff
+@279 eaf
+@27a fff
+@27b fff
+@27c fff
+@27d fff
+@27e fff
+@27f fff
+// conversion 3 for error number 13
+@280 fff
+@281 eaf
+@282 fff
+@283 fff
+@284 fff
+@285 fff
+@286 fff
+@287 fff
+// conversion 4 for error number 13
+@288 fff
+@289 eaf
+@28a fff
+@28b fff
+@28c fff
+@28d fff
+@28e fff
+@28f fff
+// conversion 5 for error number 13
+@290 fff
+@291 eaf
+@292 fff
+@293 fff
+@294 fff
+@295 fff
+@296 fff
+@297 fff
+// conversion 6 for error number 13
+@298 fff
+@299 eaf
+@29a fff
+@29b fff
+@29c fff
+@29d fff
+@29e fff
+@29f fff
+// Error = 21a hex 538 decimal
+// conversion 1 for error number 14
+@2a0 fff
+@2a1 fff
+@2a2 fff
+@2a3 fff
+@2a4 ef2
+@2a5 fff
+@2a6 fff
+@2a7 fff
+// conversion 2 for error number 14
+@2a8 fff
+@2a9 fff
+@2aa fff
+@2ab fff
+@2ac ef2
+@2ad fff
+@2ae fff
+@2af fff
+// conversion 3 for error number 14
+@2b0 fff
+@2b1 fff
+@2b2 fff
+@2b3 fff
+@2b4 ef2
+@2b5 fff
+@2b6 fff
+@2b7 fff
+// conversion 4 for error number 14
+@2b8 fff
+@2b9 fff
+@2ba fff
+@2bb fff
+@2bc ef2
+@2bd fff
+@2be fff
+@2bf fff
+// conversion 5 for error number 14
+@2c0 fff
+@2c1 fff
+@2c2 fff
+@2c3 fff
+@2c4 ef2
+@2c5 fff
+@2c6 fff
+@2c7 fff
+// conversion 6 for error number 14
+@2c8 fff
+@2c9 fff
+@2ca fff
+@2cb fff
+@2cc ef2
+@2cd fff
+@2ce fff
+@2cf fff
+// Error = 23d hex 573 decimal
+// conversion 1 for error number 15
+@2d0 fff
+@2d1 fff
+@2d2 fff
+@2d3 fff
+@2d4 ee1
+@2d5 fff
+@2d6 fff
+@2d7 fff
+// conversion 2 for error number 15
+@2d8 fff
+@2d9 fff
+@2da fff
+@2db fff
+@2dc ee1
+@2dd fff
+@2de fff
+@2df fff
+// conversion 3 for error number 15
+@2e0 fff
+@2e1 fff
+@2e2 fff
+@2e3 fff
+@2e4 ee1
+@2e5 fff
+@2e6 fff
+@2e7 fff
+// conversion 4 for error number 15
+@2e8 fff
+@2e9 fff
+@2ea fff
+@2eb fff
+@2ec ee1
+@2ed fff
+@2ee fff
+@2ef fff
+// conversion 5 for error number 15
+@2f0 fff
+@2f1 fff
+@2f2 fff
+@2f3 fff
+@2f4 ee1
+@2f5 fff
+@2f6 fff
+@2f7 fff
+// conversion 6 for error number 15
+@2f8 fff
+@2f9 fff
+@2fa fff
+@2fb fff
+@2fc ee1
+@2fd fff
+@2fe fff
+@2ff fff
+// Error = 1c9 hex 457 decimal
+// conversion 1 for error number 16
+@300 fff
+@301 fff
+@302 fff
+@303 fff
+@304 f1b
+@305 fff
+@306 fff
+@307 fff
+// conversion 2 for error number 16
+@308 fff
+@309 fff
+@30a fff
+@30b fff
+@30c f1b
+@30d fff
+@30e fff
+@30f fff
+// conversion 3 for error number 16
+@310 fff
+@311 fff
+@312 fff
+@313 fff
+@314 f1b
+@315 fff
+@316 fff
+@317 fff
+// conversion 4 for error number 16
+@318 fff
+@319 fff
+@31a fff
+@31b fff
+@31c f1b
+@31d fff
+@31e fff
+@31f fff
+// conversion 5 for error number 16
+@320 fff
+@321 fff
+@322 fff
+@323 fff
+@324 f1b
+@325 fff
+@326 fff
+@327 fff
+// conversion 6 for error number 16
+@328 fff
+@329 fff
+@32a fff
+@32b fff
+@32c f1b
+@32d fff
+@32e fff
+@32f fff
+// Error = f4 hex 244 decimal
+// conversion 1 for error number 17
+@330 fff
+@331 f0b
+@332 fff
+@333 fff
+@334 fff
+@335 fff
+@336 fff
+@337 fff
+// conversion 2 for error number 17
+@338 fff
+@339 f0b
+@33a fff
+@33b fff
+@33c fff
+@33d fff
+@33e fff
+@33f fff
+// conversion 3 for error number 17
+@340 fff
+@341 f0b
+@342 fff
+@343 fff
+@344 fff
+@345 fff
+@346 fff
+@347 fff
+// conversion 4 for error number 17
+@348 fff
+@349 f0b
+@34a fff
+@34b fff
+@34c fff
+@34d fff
+@34e fff
+@34f fff
+// conversion 5 for error number 17
+@350 fff
+@351 f0b
+@352 fff
+@353 fff
+@354 fff
+@355 fff
+@356 fff
+@357 fff
+// conversion 6 for error number 17
+@358 fff
+@359 f0b
+@35a fff
+@35b fff
+@35c fff
+@35d fff
+@35e fff
+@35f fff
+// Error = 2 hex 2 decimal
+// conversion 1 for error number 18
+@360 fff
+@361 ffd
+@362 fff
+@363 fff
+@364 fff
+@365 fff
+@366 fff
+@367 fff
+// conversion 2 for error number 18
+@368 fff
+@369 ffd
+@36a fff
+@36b fff
+@36c fff
+@36d fff
+@36e fff
+@36f fff
+// conversion 3 for error number 18
+@370 fff
+@371 ffd
+@372 fff
+@373 fff
+@374 fff
+@375 fff
+@376 fff
+@377 fff
+// conversion 4 for error number 18
+@378 fff
+@379 ffd
+@37a fff
+@37b fff
+@37c fff
+@37d fff
+@37e fff
+@37f fff
+// conversion 5 for error number 18
+@380 fff
+@381 ffd
+@382 fff
+@383 fff
+@384 fff
+@385 fff
+@386 fff
+@387 fff
+// conversion 6 for error number 18
+@388 fff
+@389 ffd
+@38a fff
+@38b fff
+@38c fff
+@38d fff
+@38e fff
+@38f fff
+// Error = ffffff35 hex -203 decimal
+// conversion 1 for error number 19
+@390 f34
+@391 fff
+@392 fff
+@393 fff
+@394 fff
+@395 fff
+@396 fff
+@397 fff
+// conversion 2 for error number 19
+@398 f34
+@399 fff
+@39a fff
+@39b fff
+@39c fff
+@39d fff
+@39e fff
+@39f fff
+// conversion 3 for error number 19
+@3a0 f34
+@3a1 fff
+@3a2 fff
+@3a3 fff
+@3a4 fff
+@3a5 fff
+@3a6 fff
+@3a7 fff
+// conversion 4 for error number 19
+@3a8 f34
+@3a9 fff
+@3aa fff
+@3ab fff
+@3ac fff
+@3ad fff
+@3ae fff
+@3af fff
+// conversion 5 for error number 19
+@3b0 f34
+@3b1 fff
+@3b2 fff
+@3b3 fff
+@3b4 fff
+@3b5 fff
+@3b6 fff
+@3b7 fff
+// conversion 6 for error number 19
+@3b8 f34
+@3b9 fff
+@3ba fff
+@3bb fff
+@3bc fff
+@3bd fff
+@3be fff
+@3bf fff
+// Error = fffffeba hex -326 decimal
+// conversion 1 for error number 20
+@3c0 eb9
+@3c1 fff
+@3c2 fff
+@3c3 fff
+@3c4 fff
+@3c5 fff
+@3c6 fff
+@3c7 fff
+// conversion 2 for error number 20
+@3c8 eb9
+@3c9 fff
+@3ca fff
+@3cb fff
+@3cc fff
+@3cd fff
+@3ce fff
+@3cf fff
+// conversion 3 for error number 20
+@3d0 eb9
+@3d1 fff
+@3d2 fff
+@3d3 fff
+@3d4 fff
+@3d5 fff
+@3d6 fff
+@3d7 fff
+// conversion 4 for error number 20
+@3d8 eb9
+@3d9 fff
+@3da fff
+@3db fff
+@3dc fff
+@3dd fff
+@3de fff
+@3df fff
+// conversion 5 for error number 20
+@3e0 eb9
+@3e1 fff
+@3e2 fff
+@3e3 fff
+@3e4 fff
+@3e5 fff
+@3e6 fff
+@3e7 fff
+// conversion 6 for error number 20
+@3e8 eb9
+@3e9 fff
+@3ea fff
+@3eb fff
+@3ec fff
+@3ed fff
+@3ee fff
+@3ef fff
+// Error = fffffea5 hex -347 decimal
+// conversion 1 for error number 21
+@3f0 ea4
+@3f1 fff
+@3f2 fff
+@3f3 fff
+@3f4 fff
+@3f5 fff
+@3f6 fff
+@3f7 fff
+// conversion 2 for error number 21
+@3f8 ea4
+@3f9 fff
+@3fa fff
+@3fb fff
+@3fc fff
+@3fd fff
+@3fe fff
+@3ff fff
+// conversion 3 for error number 21
+@400 ea4
+@401 fff
+@402 fff
+@403 fff
+@404 fff
+@405 fff
+@406 fff
+@407 fff
+// conversion 4 for error number 21
+@408 ea4
+@409 fff
+@40a fff
+@40b fff
+@40c fff
+@40d fff
+@40e fff
+@40f fff
+// conversion 5 for error number 21
+@410 ea4
+@411 fff
+@412 fff
+@413 fff
+@414 fff
+@415 fff
+@416 fff
+@417 fff
+// conversion 6 for error number 21
+@418 ea4
+@419 fff
+@41a fff
+@41b fff
+@41c fff
+@41d fff
+@41e fff
+@41f fff
+// Error = fffffeeb hex -277 decimal
+// conversion 1 for error number 22
+@420 eea
+@421 fff
+@422 fff
+@423 fff
+@424 fff
+@425 fff
+@426 fff
+@427 fff
+// conversion 2 for error number 22
+@428 eea
+@429 fff
+@42a fff
+@42b fff
+@42c fff
+@42d fff
+@42e fff
+@42f fff
+// conversion 3 for error number 22
+@430 eea
+@431 fff
+@432 fff
+@433 fff
+@434 fff
+@435 fff
+@436 fff
+@437 fff
+// conversion 4 for error number 22
+@438 eea
+@439 fff
+@43a fff
+@43b fff
+@43c fff
+@43d fff
+@43e fff
+@43f fff
+// conversion 5 for error number 22
+@440 eea
+@441 fff
+@442 fff
+@443 fff
+@444 fff
+@445 fff
+@446 fff
+@447 fff
+// conversion 6 for error number 22
+@448 eea
+@449 fff
+@44a fff
+@44b fff
+@44c fff
+@44d fff
+@44e fff
+@44f fff
+// Error = ffffff6c hex -148 decimal
+// conversion 1 for error number 23
+@450 f6b
+@451 fff
+@452 fff
+@453 fff
+@454 fff
+@455 fff
+@456 fff
+@457 fff
+// conversion 2 for error number 23
+@458 f6b
+@459 fff
+@45a fff
+@45b fff
+@45c fff
+@45d fff
+@45e fff
+@45f fff
+// conversion 3 for error number 23
+@460 f6b
+@461 fff
+@462 fff
+@463 fff
+@464 fff
+@465 fff
+@466 fff
+@467 fff
+// conversion 4 for error number 23
+@468 f6b
+@469 fff
+@46a fff
+@46b fff
+@46c fff
+@46d fff
+@46e fff
+@46f fff
+// conversion 5 for error number 23
+@470 f6b
+@471 fff
+@472 fff
+@473 fff
+@474 fff
+@475 fff
+@476 fff
+@477 fff
+// conversion 6 for error number 23
+@478 f6b
+@479 fff
+@47a fff
+@47b fff
+@47c fff
+@47d fff
+@47e fff
+@47f fff
+// Error = ffffffff hex -1 decimal
+// conversion 1 for error number 24
+@480 ffe
+@481 fff
+@482 fff
+@483 fff
+@484 fff
+@485 fff
+@486 fff
+@487 fff
+// conversion 2 for error number 24
+@488 ffe
+@489 fff
+@48a fff
+@48b fff
+@48c fff
+@48d fff
+@48e fff
+@48f fff
+// conversion 3 for error number 24
+@490 ffe
+@491 fff
+@492 fff
+@493 fff
+@494 fff
+@495 fff
+@496 fff
+@497 fff
+// conversion 4 for error number 24
+@498 ffe
+@499 fff
+@49a fff
+@49b fff
+@49c fff
+@49d fff
+@49e fff
+@49f fff
+// conversion 5 for error number 24
+@4a0 ffe
+@4a1 fff
+@4a2 fff
+@4a3 fff
+@4a4 fff
+@4a5 fff
+@4a6 fff
+@4a7 fff
+// conversion 6 for error number 24
+@4a8 ffe
+@4a9 fff
+@4aa fff
+@4ab fff
+@4ac fff
+@4ad fff
+@4ae fff
+@4af fff
+// Error = 7b hex 123 decimal
+// conversion 1 for error number 25
+@4b0 fff
+@4b1 f84
+@4b2 fff
+@4b3 fff
+@4b4 fff
+@4b5 fff
+@4b6 fff
+@4b7 fff
+// conversion 2 for error number 25
+@4b8 fff
+@4b9 f84
+@4ba fff
+@4bb fff
+@4bc fff
+@4bd fff
+@4be fff
+@4bf fff
+// conversion 3 for error number 25
+@4c0 fff
+@4c1 f84
+@4c2 fff
+@4c3 fff
+@4c4 fff
+@4c5 fff
+@4c6 fff
+@4c7 fff
+// conversion 4 for error number 25
+@4c8 fff
+@4c9 f84
+@4ca fff
+@4cb fff
+@4cc fff
+@4cd fff
+@4ce fff
+@4cf fff
+// conversion 5 for error number 25
+@4d0 fff
+@4d1 f84
+@4d2 fff
+@4d3 fff
+@4d4 fff
+@4d5 fff
+@4d6 fff
+@4d7 fff
+// conversion 6 for error number 25
+@4d8 fff
+@4d9 f84
+@4da fff
+@4db fff
+@4dc fff
+@4dd fff
+@4de fff
+@4df fff
+// Error = c5 hex 197 decimal
+// conversion 1 for error number 26
+@4e0 fff
+@4e1 f3a
+@4e2 fff
+@4e3 fff
+@4e4 fff
+@4e5 fff
+@4e6 fff
+@4e7 fff
+// conversion 2 for error number 26
+@4e8 fff
+@4e9 f3a
+@4ea fff
+@4eb fff
+@4ec fff
+@4ed fff
+@4ee fff
+@4ef fff
+// conversion 3 for error number 26
+@4f0 fff
+@4f1 f3a
+@4f2 fff
+@4f3 fff
+@4f4 fff
+@4f5 fff
+@4f6 fff
+@4f7 fff
+// conversion 4 for error number 26
+@4f8 fff
+@4f9 f3a
+@4fa fff
+@4fb fff
+@4fc fff
+@4fd fff
+@4fe fff
+@4ff fff
+// conversion 5 for error number 26
+@500 fff
+@501 f3a
+@502 fff
+@503 fff
+@504 fff
+@505 fff
+@506 fff
+@507 fff
+// conversion 6 for error number 26
+@508 fff
+@509 f3a
+@50a fff
+@50b fff
+@50c fff
+@50d fff
+@50e fff
+@50f fff
+// Error = d2 hex 210 decimal
+// conversion 1 for error number 27
+@510 fff
+@511 f2d
+@512 fff
+@513 fff
+@514 fff
+@515 fff
+@516 fff
+@517 fff
+// conversion 2 for error number 27
+@518 fff
+@519 f2d
+@51a fff
+@51b fff
+@51c fff
+@51d fff
+@51e fff
+@51f fff
+// conversion 3 for error number 27
+@520 fff
+@521 f2d
+@522 fff
+@523 fff
+@524 fff
+@525 fff
+@526 fff
+@527 fff
+// conversion 4 for error number 27
+@528 fff
+@529 f2d
+@52a fff
+@52b fff
+@52c fff
+@52d fff
+@52e fff
+@52f fff
+// conversion 5 for error number 27
+@530 fff
+@531 f2d
+@532 fff
+@533 fff
+@534 fff
+@535 fff
+@536 fff
+@537 fff
+// conversion 6 for error number 27
+@538 fff
+@539 f2d
+@53a fff
+@53b fff
+@53c fff
+@53d fff
+@53e fff
+@53f fff
+// Error = a8 hex 168 decimal
+// conversion 1 for error number 28
+@540 fff
+@541 f57
+@542 fff
+@543 fff
+@544 fff
+@545 fff
+@546 fff
+@547 fff
+// conversion 2 for error number 28
+@548 fff
+@549 f57
+@54a fff
+@54b fff
+@54c fff
+@54d fff
+@54e fff
+@54f fff
+// conversion 3 for error number 28
+@550 fff
+@551 f57
+@552 fff
+@553 fff
+@554 fff
+@555 fff
+@556 fff
+@557 fff
+// conversion 4 for error number 28
+@558 fff
+@559 f57
+@55a fff
+@55b fff
+@55c fff
+@55d fff
+@55e fff
+@55f fff
+// conversion 5 for error number 28
+@560 fff
+@561 f57
+@562 fff
+@563 fff
+@564 fff
+@565 fff
+@566 fff
+@567 fff
+// conversion 6 for error number 28
+@568 fff
+@569 f57
+@56a fff
+@56b fff
+@56c fff
+@56d fff
+@56e fff
+@56f fff
+// Error = 5a hex 90 decimal
+// conversion 1 for error number 29
+@570 fff
+@571 fa5
+@572 fff
+@573 fff
+@574 fff
+@575 fff
+@576 fff
+@577 fff
+// conversion 2 for error number 29
+@578 fff
+@579 fa5
+@57a fff
+@57b fff
+@57c fff
+@57d fff
+@57e fff
+@57f fff
+// conversion 3 for error number 29
+@580 fff
+@581 fa5
+@582 fff
+@583 fff
+@584 fff
+@585 fff
+@586 fff
+@587 fff
+// conversion 4 for error number 29
+@588 fff
+@589 fa5
+@58a fff
+@58b fff
+@58c fff
+@58d fff
+@58e fff
+@58f fff
+// conversion 5 for error number 29
+@590 fff
+@591 fa5
+@592 fff
+@593 fff
+@594 fff
+@595 fff
+@596 fff
+@597 fff
+// conversion 6 for error number 29
+@598 fff
+@599 fa5
+@59a fff
+@59b fff
+@59c fff
+@59d fff
+@59e fff
+@59f fff
+// Error = 1 hex 1 decimal
+// conversion 1 for error number 30
+@5a0 fff
+@5a1 ffe
+@5a2 fff
+@5a3 fff
+@5a4 fff
+@5a5 fff
+@5a6 fff
+@5a7 fff
+// conversion 2 for error number 30
+@5a8 fff
+@5a9 ffe
+@5aa fff
+@5ab fff
+@5ac fff
+@5ad fff
+@5ae fff
+@5af fff
+// conversion 3 for error number 30
+@5b0 fff
+@5b1 ffe
+@5b2 fff
+@5b3 fff
+@5b4 fff
+@5b5 fff
+@5b6 fff
+@5b7 fff
+// conversion 4 for error number 30
+@5b8 fff
+@5b9 ffe
+@5ba fff
+@5bb fff
+@5bc fff
+@5bd fff
+@5be fff
+@5bf fff
+// conversion 5 for error number 30
+@5c0 fff
+@5c1 ffe
+@5c2 fff
+@5c3 fff
+@5c4 fff
+@5c5 fff
+@5c6 fff
+@5c7 fff
+// conversion 6 for error number 30
+@5c8 fff
+@5c9 ffe
+@5ca fff
+@5cb fff
+@5cc fff
+@5cd fff
+@5ce fff
+@5cf fff
+// Error = ffffffb6 hex -74 decimal
+// conversion 1 for error number 31
+@5d0 fb5
+@5d1 fff
+@5d2 fff
+@5d3 fff
+@5d4 fff
+@5d5 fff
+@5d6 fff
+@5d7 fff
+// conversion 2 for error number 31
+@5d8 fb5
+@5d9 fff
+@5da fff
+@5db fff
+@5dc fff
+@5dd fff
+@5de fff
+@5df fff
+// conversion 3 for error number 31
+@5e0 fb5
+@5e1 fff
+@5e2 fff
+@5e3 fff
+@5e4 fff
+@5e5 fff
+@5e6 fff
+@5e7 fff
+// conversion 4 for error number 31
+@5e8 fb5
+@5e9 fff
+@5ea fff
+@5eb fff
+@5ec fff
+@5ed fff
+@5ee fff
+@5ef fff
+// conversion 5 for error number 31
+@5f0 fb5
+@5f1 fff
+@5f2 fff
+@5f3 fff
+@5f4 fff
+@5f5 fff
+@5f6 fff
+@5f7 fff
+// conversion 6 for error number 31
+@5f8 fb5
+@5f9 fff
+@5fa fff
+@5fb fff
+@5fc fff
+@5fd fff
+@5fe fff
+@5ff fff
+// Error = ffffff89 hex -119 decimal
+// conversion 1 for error number 32
+@600 f88
+@601 fff
+@602 fff
+@603 fff
+@604 fff
+@605 fff
+@606 fff
+@607 fff
+// conversion 2 for error number 32
+@608 f88
+@609 fff
+@60a fff
+@60b fff
+@60c fff
+@60d fff
+@60e fff
+@60f fff
+// conversion 3 for error number 32
+@610 f88
+@611 fff
+@612 fff
+@613 fff
+@614 fff
+@615 fff
+@616 fff
+@617 fff
+// conversion 4 for error number 32
+@618 f88
+@619 fff
+@61a fff
+@61b fff
+@61c fff
+@61d fff
+@61e fff
+@61f fff
+// conversion 5 for error number 32
+@620 f88
+@621 fff
+@622 fff
+@623 fff
+@624 fff
+@625 fff
+@626 fff
+@627 fff
+// conversion 6 for error number 32
+@628 f88
+@629 fff
+@62a fff
+@62b fff
+@62c fff
+@62d fff
+@62e fff
+@62f fff
+// Error = ffffff81 hex -127 decimal
+// conversion 1 for error number 33
+@630 f80
+@631 fff
+@632 fff
+@633 fff
+@634 fff
+@635 fff
+@636 fff
+@637 fff
+// conversion 2 for error number 33
+@638 f80
+@639 fff
+@63a fff
+@63b fff
+@63c fff
+@63d fff
+@63e fff
+@63f fff
+// conversion 3 for error number 33
+@640 f80
+@641 fff
+@642 fff
+@643 fff
+@644 fff
+@645 fff
+@646 fff
+@647 fff
+// conversion 4 for error number 33
+@648 f80
+@649 fff
+@64a fff
+@64b fff
+@64c fff
+@64d fff
+@64e fff
+@64f fff
+// conversion 5 for error number 33
+@650 f80
+@651 fff
+@652 fff
+@653 fff
+@654 fff
+@655 fff
+@656 fff
+@657 fff
+// conversion 6 for error number 33
+@658 f80
+@659 fff
+@65a fff
+@65b fff
+@65c fff
+@65d fff
+@65e fff
+@65f fff
+// Error = ffffff9a hex -102 decimal
+// conversion 1 for error number 34
+@660 f99
+@661 fff
+@662 fff
+@663 fff
+@664 fff
+@665 fff
+@666 fff
+@667 fff
+// conversion 2 for error number 34
+@668 f99
+@669 fff
+@66a fff
+@66b fff
+@66c fff
+@66d fff
+@66e fff
+@66f fff
+// conversion 3 for error number 34
+@670 f99
+@671 fff
+@672 fff
+@673 fff
+@674 fff
+@675 fff
+@676 fff
+@677 fff
+// conversion 4 for error number 34
+@678 f99
+@679 fff
+@67a fff
+@67b fff
+@67c fff
+@67d fff
+@67e fff
+@67f fff
+// conversion 5 for error number 34
+@680 f99
+@681 fff
+@682 fff
+@683 fff
+@684 fff
+@685 fff
+@686 fff
+@687 fff
+// conversion 6 for error number 34
+@688 f99
+@689 fff
+@68a fff
+@68b fff
+@68c fff
+@68d fff
+@68e fff
+@68f fff
+// Error = ffffffca hex -54 decimal
+// conversion 1 for error number 35
+@690 fc9
+@691 fff
+@692 fff
+@693 fff
+@694 fff
+@695 fff
+@696 fff
+@697 fff
+// conversion 2 for error number 35
+@698 fc9
+@699 fff
+@69a fff
+@69b fff
+@69c fff
+@69d fff
+@69e fff
+@69f fff
+// conversion 3 for error number 35
+@6a0 fc9
+@6a1 fff
+@6a2 fff
+@6a3 fff
+@6a4 fff
+@6a5 fff
+@6a6 fff
+@6a7 fff
+// conversion 4 for error number 35
+@6a8 fc9
+@6a9 fff
+@6aa fff
+@6ab fff
+@6ac fff
+@6ad fff
+@6ae fff
+@6af fff
+// conversion 5 for error number 35
+@6b0 fc9
+@6b1 fff
+@6b2 fff
+@6b3 fff
+@6b4 fff
+@6b5 fff
+@6b6 fff
+@6b7 fff
+// conversion 6 for error number 35
+@6b8 fc9
+@6b9 fff
+@6ba fff
+@6bb fff
+@6bc fff
+@6bd fff
+@6be fff
+@6bf fff
+// Error = 0 hex 0 decimal
+// conversion 1 for error number 36
+@6c0 fff
+@6c1 fff
+@6c2 fff
+@6c3 fff
+@6c4 fff
+@6c5 fff
+@6c6 fff
+@6c7 fff
+// conversion 2 for error number 36
+@6c8 fff
+@6c9 fff
+@6ca fff
+@6cb fff
+@6cc fff
+@6cd fff
+@6ce fff
+@6cf fff
+// conversion 3 for error number 36
+@6d0 fff
+@6d1 fff
+@6d2 fff
+@6d3 fff
+@6d4 fff
+@6d5 fff
+@6d6 fff
+@6d7 fff
+// conversion 4 for error number 36
+@6d8 fff
+@6d9 fff
+@6da fff
+@6db fff
+@6dc fff
+@6dd fff
+@6de fff
+@6df fff
+// conversion 5 for error number 36
+@6e0 fff
+@6e1 fff
+@6e2 fff
+@6e3 fff
+@6e4 fff
+@6e5 fff
+@6e6 fff
+@6e7 fff
+// conversion 6 for error number 36
+@6e8 fff
+@6e9 fff
+@6ea fff
+@6eb fff
+@6ec fff
+@6ed fff
+@6ee fff
+@6ef fff
+// Error = 2d hex 45 decimal
+// conversion 1 for error number 37
+@6f0 fff
+@6f1 fd2
+@6f2 fff
+@6f3 fff
+@6f4 fff
+@6f5 fff
+@6f6 fff
+@6f7 fff
+// conversion 2 for error number 37
+@6f8 fff
+@6f9 fd2
+@6fa fff
+@6fb fff
+@6fc fff
+@6fd fff
+@6fe fff
+@6ff fff
+// conversion 3 for error number 37
+@700 fff
+@701 fd2
+@702 fff
+@703 fff
+@704 fff
+@705 fff
+@706 fff
+@707 fff
+// conversion 4 for error number 37
+@708 fff
+@709 fd2
+@70a fff
+@70b fff
+@70c fff
+@70d fff
+@70e fff
+@70f fff
+// conversion 5 for error number 37
+@710 fff
+@711 fd2
+@712 fff
+@713 fff
+@714 fff
+@715 fff
+@716 fff
+@717 fff
+// conversion 6 for error number 37
+@718 fff
+@719 fd2
+@71a fff
+@71b fff
+@71c fff
+@71d fff
+@71e fff
+@71f fff
+// Error = 48 hex 72 decimal
+// conversion 1 for error number 38
+@720 fff
+@721 fb7
+@722 fff
+@723 fff
+@724 fff
+@725 fff
+@726 fff
+@727 fff
+// conversion 2 for error number 38
+@728 fff
+@729 fb7
+@72a fff
+@72b fff
+@72c fff
+@72d fff
+@72e fff
+@72f fff
+// conversion 3 for error number 38
+@730 fff
+@731 fb7
+@732 fff
+@733 fff
+@734 fff
+@735 fff
+@736 fff
+@737 fff
+// conversion 4 for error number 38
+@738 fff
+@739 fb7
+@73a fff
+@73b fff
+@73c fff
+@73d fff
+@73e fff
+@73f fff
+// conversion 5 for error number 38
+@740 fff
+@741 fb7
+@742 fff
+@743 fff
+@744 fff
+@745 fff
+@746 fff
+@747 fff
+// conversion 6 for error number 38
+@748 fff
+@749 fb7
+@74a fff
+@74b fff
+@74c fff
+@74d fff
+@74e fff
+@74f fff
+// Error = 4d hex 77 decimal
+// conversion 1 for error number 39
+@750 fff
+@751 fb2
+@752 fff
+@753 fff
+@754 fff
+@755 fff
+@756 fff
+@757 fff
+// conversion 2 for error number 39
+@758 fff
+@759 fb2
+@75a fff
+@75b fff
+@75c fff
+@75d fff
+@75e fff
+@75f fff
+// conversion 3 for error number 39
+@760 fff
+@761 fb2
+@762 fff
+@763 fff
+@764 fff
+@765 fff
+@766 fff
+@767 fff
+// conversion 4 for error number 39
+@768 fff
+@769 fb2
+@76a fff
+@76b fff
+@76c fff
+@76d fff
+@76e fff
+@76f fff
+// conversion 5 for error number 39
+@770 fff
+@771 fb2
+@772 fff
+@773 fff
+@774 fff
+@775 fff
+@776 fff
+@777 fff
+// conversion 6 for error number 39
+@778 fff
+@779 fb2
+@77a fff
+@77b fff
+@77c fff
+@77d fff
+@77e fff
+@77f fff
+// Error = 3e hex 62 decimal
+// conversion 1 for error number 40
+@780 fff
+@781 fc1
+@782 fff
+@783 fff
+@784 fff
+@785 fff
+@786 fff
+@787 fff
+// conversion 2 for error number 40
+@788 fff
+@789 fc1
+@78a fff
+@78b fff
+@78c fff
+@78d fff
+@78e fff
+@78f fff
+// conversion 3 for error number 40
+@790 fff
+@791 fc1
+@792 fff
+@793 fff
+@794 fff
+@795 fff
+@796 fff
+@797 fff
+// conversion 4 for error number 40
+@798 fff
+@799 fc1
+@79a fff
+@79b fff
+@79c fff
+@79d fff
+@79e fff
+@79f fff
+// conversion 5 for error number 40
+@7a0 fff
+@7a1 fc1
+@7a2 fff
+@7a3 fff
+@7a4 fff
+@7a5 fff
+@7a6 fff
+@7a7 fff
+// conversion 6 for error number 40
+@7a8 fff
+@7a9 fc1
+@7aa fff
+@7ab fff
+@7ac fff
+@7ad fff
+@7ae fff
+@7af fff
+// Error = 21 hex 33 decimal
+// conversion 1 for error number 41
+@7b0 fff
+@7b1 fde
+@7b2 fff
+@7b3 fff
+@7b4 fff
+@7b5 fff
+@7b6 fff
+@7b7 fff
+// conversion 2 for error number 41
+@7b8 fff
+@7b9 fde
+@7ba fff
+@7bb fff
+@7bc fff
+@7bd fff
+@7be fff
+@7bf fff
+// conversion 3 for error number 41
+@7c0 fff
+@7c1 fde
+@7c2 fff
+@7c3 fff
+@7c4 fff
+@7c5 fff
+@7c6 fff
+@7c7 fff
+// conversion 4 for error number 41
+@7c8 fff
+@7c9 fde
+@7ca fff
+@7cb fff
+@7cc fff
+@7cd fff
+@7ce fff
+@7cf fff
+// conversion 5 for error number 41
+@7d0 fff
+@7d1 fde
+@7d2 fff
+@7d3 fff
+@7d4 fff
+@7d5 fff
+@7d6 fff
+@7d7 fff
+// conversion 6 for error number 41
+@7d8 fff
+@7d9 fde
+@7da fff
+@7db fff
+@7dc fff
+@7dd fff
+@7de fff
+@7df fff
+// Error = 0 hex 0 decimal
+// conversion 1 for error number 42
+@7e0 fff
+@7e1 fff
+@7e2 fff
+@7e3 fff
+@7e4 fff
+@7e5 fff
+@7e6 fff
+@7e7 fff
+// conversion 2 for error number 42
+@7e8 fff
+@7e9 fff
+@7ea fff
+@7eb fff
+@7ec fff
+@7ed fff
+@7ee fff
+@7ef fff
+// conversion 3 for error number 42
+@7f0 fff
+@7f1 fff
+@7f2 fff
+@7f3 fff
+@7f4 fff
+@7f5 fff
+@7f6 fff
+@7f7 fff
+// conversion 4 for error number 42
+@7f8 fff
+@7f9 fff
+@7fa fff
+@7fb fff
+@7fc fff
+@7fd fff
+@7fe fff
+@7ff fff
+// conversion 5 for error number 42
+@800 fff
+@801 fff
+@802 fff
+@803 fff
+@804 fff
+@805 fff
+@806 fff
+@807 fff
+// conversion 6 for error number 42
+@808 fff
+@809 fff
+@80a fff
+@80b fff
+@80c fff
+@80d fff
+@80e fff
+@80f fff
+// Error = ffffffe5 hex -27 decimal
+// conversion 1 for error number 43
+@810 fe4
+@811 fff
+@812 fff
+@813 fff
+@814 fff
+@815 fff
+@816 fff
+@817 fff
+// conversion 2 for error number 43
+@818 fe4
+@819 fff
+@81a fff
+@81b fff
+@81c fff
+@81d fff
+@81e fff
+@81f fff
+// conversion 3 for error number 43
+@820 fe4
+@821 fff
+@822 fff
+@823 fff
+@824 fff
+@825 fff
+@826 fff
+@827 fff
+// conversion 4 for error number 43
+@828 fe4
+@829 fff
+@82a fff
+@82b fff
+@82c fff
+@82d fff
+@82e fff
+@82f fff
+// conversion 5 for error number 43
+@830 fe4
+@831 fff
+@832 fff
+@833 fff
+@834 fff
+@835 fff
+@836 fff
+@837 fff
+// conversion 6 for error number 43
+@838 fe4
+@839 fff
+@83a fff
+@83b fff
+@83c fff
+@83d fff
+@83e fff
+@83f fff
+// Error = ffffffd5 hex -43 decimal
+// conversion 1 for error number 44
+@840 fd4
+@841 fff
+@842 fff
+@843 fff
+@844 fff
+@845 fff
+@846 fff
+@847 fff
+// conversion 2 for error number 44
+@848 fd4
+@849 fff
+@84a fff
+@84b fff
+@84c fff
+@84d fff
+@84e fff
+@84f fff
+// conversion 3 for error number 44
+@850 fd4
+@851 fff
+@852 fff
+@853 fff
+@854 fff
+@855 fff
+@856 fff
+@857 fff
+// conversion 4 for error number 44
+@858 fd4
+@859 fff
+@85a fff
+@85b fff
+@85c fff
+@85d fff
+@85e fff
+@85f fff
+// conversion 5 for error number 44
+@860 fd4
+@861 fff
+@862 fff
+@863 fff
+@864 fff
+@865 fff
+@866 fff
+@867 fff
+// conversion 6 for error number 44
+@868 fd4
+@869 fff
+@86a fff
+@86b fff
+@86c fff
+@86d fff
+@86e fff
+@86f fff
+// Error = ffffffd1 hex -47 decimal
+// conversion 1 for error number 45
+@870 fd0
+@871 fff
+@872 fff
+@873 fff
+@874 fff
+@875 fff
+@876 fff
+@877 fff
+// conversion 2 for error number 45
+@878 fd0
+@879 fff
+@87a fff
+@87b fff
+@87c fff
+@87d fff
+@87e fff
+@87f fff
+// conversion 3 for error number 45
+@880 fd0
+@881 fff
+@882 fff
+@883 fff
+@884 fff
+@885 fff
+@886 fff
+@887 fff
+// conversion 4 for error number 45
+@888 fd0
+@889 fff
+@88a fff
+@88b fff
+@88c fff
+@88d fff
+@88e fff
+@88f fff
+// conversion 5 for error number 45
+@890 fd0
+@891 fff
+@892 fff
+@893 fff
+@894 fff
+@895 fff
+@896 fff
+@897 fff
+// conversion 6 for error number 45
+@898 fd0
+@899 fff
+@89a fff
+@89b fff
+@89c fff
+@89d fff
+@89e fff
+@89f fff
+// Error = ffffffdb hex -37 decimal
+// conversion 1 for error number 46
+@8a0 fda
+@8a1 fff
+@8a2 fff
+@8a3 fff
+@8a4 fff
+@8a5 fff
+@8a6 fff
+@8a7 fff
+// conversion 2 for error number 46
+@8a8 fda
+@8a9 fff
+@8aa fff
+@8ab fff
+@8ac fff
+@8ad fff
+@8ae fff
+@8af fff
+// conversion 3 for error number 46
+@8b0 fda
+@8b1 fff
+@8b2 fff
+@8b3 fff
+@8b4 fff
+@8b5 fff
+@8b6 fff
+@8b7 fff
+// conversion 4 for error number 46
+@8b8 fda
+@8b9 fff
+@8ba fff
+@8bb fff
+@8bc fff
+@8bd fff
+@8be fff
+@8bf fff
+// conversion 5 for error number 46
+@8c0 fda
+@8c1 fff
+@8c2 fff
+@8c3 fff
+@8c4 fff
+@8c5 fff
+@8c6 fff
+@8c7 fff
+// conversion 6 for error number 46
+@8c8 fda
+@8c9 fff
+@8ca fff
+@8cb fff
+@8cc fff
+@8cd fff
+@8ce fff
+@8cf fff
+// Error = ffffffec hex -20 decimal
+// conversion 1 for error number 47
+@8d0 feb
+@8d1 fff
+@8d2 fff
+@8d3 fff
+@8d4 fff
+@8d5 fff
+@8d6 fff
+@8d7 fff
+// conversion 2 for error number 47
+@8d8 feb
+@8d9 fff
+@8da fff
+@8db fff
+@8dc fff
+@8dd fff
+@8de fff
+@8df fff
+// conversion 3 for error number 47
+@8e0 feb
+@8e1 fff
+@8e2 fff
+@8e3 fff
+@8e4 fff
+@8e5 fff
+@8e6 fff
+@8e7 fff
+// conversion 4 for error number 47
+@8e8 feb
+@8e9 fff
+@8ea fff
+@8eb fff
+@8ec fff
+@8ed fff
+@8ee fff
+@8ef fff
+// conversion 5 for error number 47
+@8f0 feb
+@8f1 fff
+@8f2 fff
+@8f3 fff
+@8f4 fff
+@8f5 fff
+@8f6 fff
+@8f7 fff
+// conversion 6 for error number 47
+@8f8 feb
+@8f9 fff
+@8fa fff
+@8fb fff
+@8fc fff
+@8fd fff
+@8fe fff
+@8ff fff
+// Error = 0 hex 0 decimal
+// conversion 1 for error number 48
+@900 fff
+@901 fff
+@902 fff
+@903 fff
+@904 fff
+@905 fff
+@906 fff
+@907 fff
+// conversion 2 for error number 48
+@908 fff
+@909 fff
+@90a fff
+@90b fff
+@90c fff
+@90d fff
+@90e fff
+@90f fff
+// conversion 3 for error number 48
+@910 fff
+@911 fff
+@912 fff
+@913 fff
+@914 fff
+@915 fff
+@916 fff
+@917 fff
+// conversion 4 for error number 48
+@918 fff
+@919 fff
+@91a fff
+@91b fff
+@91c fff
+@91d fff
+@91e fff
+@91f fff
+// conversion 5 for error number 48
+@920 fff
+@921 fff
+@922 fff
+@923 fff
+@924 fff
+@925 fff
+@926 fff
+@927 fff
+// conversion 6 for error number 48
+@928 fff
+@929 fff
+@92a fff
+@92b fff
+@92c fff
+@92d fff
+@92e fff
+@92f fff
+// Error = 10 hex 16 decimal
+// conversion 1 for error number 49
+@930 fff
+@931 fef
+@932 fff
+@933 fff
+@934 fff
+@935 fff
+@936 fff
+@937 fff
+// conversion 2 for error number 49
+@938 fff
+@939 fef
+@93a fff
+@93b fff
+@93c fff
+@93d fff
+@93e fff
+@93f fff
+// conversion 3 for error number 49
+@940 fff
+@941 fef
+@942 fff
+@943 fff
+@944 fff
+@945 fff
+@946 fff
+@947 fff
+// conversion 4 for error number 49
+@948 fff
+@949 fef
+@94a fff
+@94b fff
+@94c fff
+@94d fff
+@94e fff
+@94f fff
+// conversion 5 for error number 49
+@950 fff
+@951 fef
+@952 fff
+@953 fff
+@954 fff
+@955 fff
+@956 fff
+@957 fff
+// conversion 6 for error number 49
+@958 fff
+@959 fef
+@95a fff
+@95b fff
+@95c fff
+@95d fff
+@95e fff
+@95f fff
+// Error = 1a hex 26 decimal
+// conversion 1 for error number 50
+@960 fff
+@961 fe5
+@962 fff
+@963 fff
+@964 fff
+@965 fff
+@966 fff
+@967 fff
+// conversion 2 for error number 50
+@968 fff
+@969 fe5
+@96a fff
+@96b fff
+@96c fff
+@96d fff
+@96e fff
+@96f fff
+// conversion 3 for error number 50
+@970 fff
+@971 fe5
+@972 fff
+@973 fff
+@974 fff
+@975 fff
+@976 fff
+@977 fff
+// conversion 4 for error number 50
+@978 fff
+@979 fe5
+@97a fff
+@97b fff
+@97c fff
+@97d fff
+@97e fff
+@97f fff
+// conversion 5 for error number 50
+@980 fff
+@981 fe5
+@982 fff
+@983 fff
+@984 fff
+@985 fff
+@986 fff
+@987 fff
+// conversion 6 for error number 50
+@988 fff
+@989 fe5
+@98a fff
+@98b fff
+@98c fff
+@98d fff
+@98e fff
+@98f fff
+// Error = 1c hex 28 decimal
+// conversion 1 for error number 51
+@990 fff
+@991 fe3
+@992 fff
+@993 fff
+@994 fff
+@995 fff
+@996 fff
+@997 fff
+// conversion 2 for error number 51
+@998 fff
+@999 fe3
+@99a fff
+@99b fff
+@99c fff
+@99d fff
+@99e fff
+@99f fff
+// conversion 3 for error number 51
+@9a0 fff
+@9a1 fe3
+@9a2 fff
+@9a3 fff
+@9a4 fff
+@9a5 fff
+@9a6 fff
+@9a7 fff
+// conversion 4 for error number 51
+@9a8 fff
+@9a9 fe3
+@9aa fff
+@9ab fff
+@9ac fff
+@9ad fff
+@9ae fff
+@9af fff
+// conversion 5 for error number 51
+@9b0 fff
+@9b1 fe3
+@9b2 fff
+@9b3 fff
+@9b4 fff
+@9b5 fff
+@9b6 fff
+@9b7 fff
+// conversion 6 for error number 51
+@9b8 fff
+@9b9 fe3
+@9ba fff
+@9bb fff
+@9bc fff
+@9bd fff
+@9be fff
+@9bf fff
+// Error = 16 hex 22 decimal
+// conversion 1 for error number 52
+@9c0 fff
+@9c1 fe9
+@9c2 fff
+@9c3 fff
+@9c4 fff
+@9c5 fff
+@9c6 fff
+@9c7 fff
+// conversion 2 for error number 52
+@9c8 fff
+@9c9 fe9
+@9ca fff
+@9cb fff
+@9cc fff
+@9cd fff
+@9ce fff
+@9cf fff
+// conversion 3 for error number 52
+@9d0 fff
+@9d1 fe9
+@9d2 fff
+@9d3 fff
+@9d4 fff
+@9d5 fff
+@9d6 fff
+@9d7 fff
+// conversion 4 for error number 52
+@9d8 fff
+@9d9 fe9
+@9da fff
+@9db fff
+@9dc fff
+@9dd fff
+@9de fff
+@9df fff
+// conversion 5 for error number 52
+@9e0 fff
+@9e1 fe9
+@9e2 fff
+@9e3 fff
+@9e4 fff
+@9e5 fff
+@9e6 fff
+@9e7 fff
+// conversion 6 for error number 52
+@9e8 fff
+@9e9 fe9
+@9ea fff
+@9eb fff
+@9ec fff
+@9ed fff
+@9ee fff
+@9ef fff
+// Error = c hex 12 decimal
+// conversion 1 for error number 53
+@9f0 fff
+@9f1 ff3
+@9f2 fff
+@9f3 fff
+@9f4 fff
+@9f5 fff
+@9f6 fff
+@9f7 fff
+// conversion 2 for error number 53
+@9f8 fff
+@9f9 ff3
+@9fa fff
+@9fb fff
+@9fc fff
+@9fd fff
+@9fe fff
+@9ff fff
+// conversion 3 for error number 53
+@a00 fff
+@a01 ff3
+@a02 fff
+@a03 fff
+@a04 fff
+@a05 fff
+@a06 fff
+@a07 fff
+// conversion 4 for error number 53
+@a08 fff
+@a09 ff3
+@a0a fff
+@a0b fff
+@a0c fff
+@a0d fff
+@a0e fff
+@a0f fff
+// conversion 5 for error number 53
+@a10 fff
+@a11 ff3
+@a12 fff
+@a13 fff
+@a14 fff
+@a15 fff
+@a16 fff
+@a17 fff
+// conversion 6 for error number 53
+@a18 fff
+@a19 ff3
+@a1a fff
+@a1b fff
+@a1c fff
+@a1d fff
+@a1e fff
+@a1f fff
+// Error = 0 hex 0 decimal
+// conversion 1 for error number 54
+@a20 fff
+@a21 fff
+@a22 fff
+@a23 fff
+@a24 fff
+@a25 fff
+@a26 fff
+@a27 fff
+// conversion 2 for error number 54
+@a28 fff
+@a29 fff
+@a2a fff
+@a2b fff
+@a2c fff
+@a2d fff
+@a2e fff
+@a2f fff
+// conversion 3 for error number 54
+@a30 fff
+@a31 fff
+@a32 fff
+@a33 fff
+@a34 fff
+@a35 fff
+@a36 fff
+@a37 fff
+// conversion 4 for error number 54
+@a38 fff
+@a39 fff
+@a3a fff
+@a3b fff
+@a3c fff
+@a3d fff
+@a3e fff
+@a3f fff
+// conversion 5 for error number 54
+@a40 fff
+@a41 fff
+@a42 fff
+@a43 fff
+@a44 fff
+@a45 fff
+@a46 fff
+@a47 fff
+// conversion 6 for error number 54
+@a48 fff
+@a49 fff
+@a4a fff
+@a4b fff
+@a4c fff
+@a4d fff
+@a4e fff
+@a4f fff
+// Error = fffffff7 hex -9 decimal
+// conversion 1 for error number 55
+@a50 ff6
+@a51 fff
+@a52 fff
+@a53 fff
+@a54 fff
+@a55 fff
+@a56 fff
+@a57 fff
+// conversion 2 for error number 55
+@a58 ff6
+@a59 fff
+@a5a fff
+@a5b fff
+@a5c fff
+@a5d fff
+@a5e fff
+@a5f fff
+// conversion 3 for error number 55
+@a60 ff6
+@a61 fff
+@a62 fff
+@a63 fff
+@a64 fff
+@a65 fff
+@a66 fff
+@a67 fff
+// conversion 4 for error number 55
+@a68 ff6
+@a69 fff
+@a6a fff
+@a6b fff
+@a6c fff
+@a6d fff
+@a6e fff
+@a6f fff
+// conversion 5 for error number 55
+@a70 ff6
+@a71 fff
+@a72 fff
+@a73 fff
+@a74 fff
+@a75 fff
+@a76 fff
+@a77 fff
+// conversion 6 for error number 55
+@a78 ff6
+@a79 fff
+@a7a fff
+@a7b fff
+@a7c fff
+@a7d fff
+@a7e fff
+@a7f fff
+// Error = fffffff0 hex -16 decimal
+// conversion 1 for error number 56
+@a80 fef
+@a81 fff
+@a82 fff
+@a83 fff
+@a84 fff
+@a85 fff
+@a86 fff
+@a87 fff
+// conversion 2 for error number 56
+@a88 fef
+@a89 fff
+@a8a fff
+@a8b fff
+@a8c fff
+@a8d fff
+@a8e fff
+@a8f fff
+// conversion 3 for error number 56
+@a90 fef
+@a91 fff
+@a92 fff
+@a93 fff
+@a94 fff
+@a95 fff
+@a96 fff
+@a97 fff
+// conversion 4 for error number 56
+@a98 fef
+@a99 fff
+@a9a fff
+@a9b fff
+@a9c fff
+@a9d fff
+@a9e fff
+@a9f fff
+// conversion 5 for error number 56
+@aa0 fef
+@aa1 fff
+@aa2 fff
+@aa3 fff
+@aa4 fff
+@aa5 fff
+@aa6 fff
+@aa7 fff
+// conversion 6 for error number 56
+@aa8 fef
+@aa9 fff
+@aaa fff
+@aab fff
+@aac fff
+@aad fff
+@aae fff
+@aaf fff
+// Error = ffffffef hex -17 decimal
+// conversion 1 for error number 57
+@ab0 fee
+@ab1 fff
+@ab2 fff
+@ab3 fff
+@ab4 fff
+@ab5 fff
+@ab6 fff
+@ab7 fff
+// conversion 2 for error number 57
+@ab8 fee
+@ab9 fff
+@aba fff
+@abb fff
+@abc fff
+@abd fff
+@abe fff
+@abf fff
+// conversion 3 for error number 57
+@ac0 fee
+@ac1 fff
+@ac2 fff
+@ac3 fff
+@ac4 fff
+@ac5 fff
+@ac6 fff
+@ac7 fff
+// conversion 4 for error number 57
+@ac8 fee
+@ac9 fff
+@aca fff
+@acb fff
+@acc fff
+@acd fff
+@ace fff
+@acf fff
+// conversion 5 for error number 57
+@ad0 fee
+@ad1 fff
+@ad2 fff
+@ad3 fff
+@ad4 fff
+@ad5 fff
+@ad6 fff
+@ad7 fff
+// conversion 6 for error number 57
+@ad8 fee
+@ad9 fff
+@ada fff
+@adb fff
+@adc fff
+@add fff
+@ade fff
+@adf fff
+// Error = fffffff3 hex -13 decimal
+// conversion 1 for error number 58
+@ae0 ff2
+@ae1 fff
+@ae2 fff
+@ae3 fff
+@ae4 fff
+@ae5 fff
+@ae6 fff
+@ae7 fff
+// conversion 2 for error number 58
+@ae8 ff2
+@ae9 fff
+@aea fff
+@aeb fff
+@aec fff
+@aed fff
+@aee fff
+@aef fff
+// conversion 3 for error number 58
+@af0 ff2
+@af1 fff
+@af2 fff
+@af3 fff
+@af4 fff
+@af5 fff
+@af6 fff
+@af7 fff
+// conversion 4 for error number 58
+@af8 ff2
+@af9 fff
+@afa fff
+@afb fff
+@afc fff
+@afd fff
+@afe fff
+@aff fff
+// conversion 5 for error number 58
+@b00 ff2
+@b01 fff
+@b02 fff
+@b03 fff
+@b04 fff
+@b05 fff
+@b06 fff
+@b07 fff
+// conversion 6 for error number 58
+@b08 ff2
+@b09 fff
+@b0a fff
+@b0b fff
+@b0c fff
+@b0d fff
+@b0e fff
+@b0f fff
+// Error = fffffff9 hex -7 decimal
+// conversion 1 for error number 59
+@b10 ff8
+@b11 fff
+@b12 fff
+@b13 fff
+@b14 fff
+@b15 fff
+@b16 fff
+@b17 fff
+// conversion 2 for error number 59
+@b18 ff8
+@b19 fff
+@b1a fff
+@b1b fff
+@b1c fff
+@b1d fff
+@b1e fff
+@b1f fff
+// conversion 3 for error number 59
+@b20 ff8
+@b21 fff
+@b22 fff
+@b23 fff
+@b24 fff
+@b25 fff
+@b26 fff
+@b27 fff
+// conversion 4 for error number 59
+@b28 ff8
+@b29 fff
+@b2a fff
+@b2b fff
+@b2c fff
+@b2d fff
+@b2e fff
+@b2f fff
+// conversion 5 for error number 59
+@b30 ff8
+@b31 fff
+@b32 fff
+@b33 fff
+@b34 fff
+@b35 fff
+@b36 fff
+@b37 fff
+// conversion 6 for error number 59
+@b38 ff8
+@b39 fff
+@b3a fff
+@b3b fff
+@b3c fff
+@b3d fff
+@b3e fff
+@b3f fff
