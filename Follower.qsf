@@ -1,0 +1,158 @@
+#============================================================
+# Pin assignments for Line Follower Robot for DE0 nano board
+#============================================================
+
+set_global_assignment -name FAMILY "Cyclone IV E"
+set_global_assignment -name DEVICE EP4CE22F17C6
+set_global_assignment -name TOP_LEVEL_ENTITY "Follower"
+set_global_assignment -name ORIGINAL_QUARTUS_VERSION 12.0
+set_global_assignment -name LAST_QUARTUS_VERSION 14.1.0
+set_global_assignment -name PROJECT_CREATION_TIME_DATE "23:19:58 DECEMBER 24,2014"
+set_global_assignment -name DEVICE_FILTER_PACKAGE FBGA
+set_global_assignment -name DEVICE_FILTER_PIN_COUNT 256
+set_global_assignment -name DEVICE_FILTER_SPEED_GRADE 6
+set_global_assignment -name CYCLONEII_RESERVE_NCEO_AFTER_CONFIGURATION "USE AS REGULAR IO"
+
+#============================================================
+# CLOCK & Reset
+#============================================================
+set_location_assignment PIN_R8 -to clk
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to clk
+set_location_assignment PIN_J15 -to RST_n
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to RST_n
+
+
+#============================================================
+# LED
+#============================================================
+set_location_assignment PIN_A15 -to led[0]
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to led[0]
+set_location_assignment PIN_A13 -to led[1]
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to led[1]
+set_location_assignment PIN_B13 -to led[2]
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to led[2]
+set_location_assignment PIN_A11 -to led[3]
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to led[3]
+set_location_assignment PIN_D1 -to led[4]
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to led[4]
+set_location_assignment PIN_F3 -to led[5]
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to led[5]
+set_location_assignment PIN_B1 -to led[6]
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to led[6]
+set_location_assignment PIN_L3 -to led[7]
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to led[7]
+
+#============================================================
+# Offset Cal (active low)
+#============================================================
+# set_location_assignment PIN_E1 -to offset_cal_n
+# set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to offset_cal_n
+
+#============================================================
+# ADC
+#============================================================
+set_location_assignment PIN_A10 -to a2d_SS_n
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to a2d_SS_n
+set_location_assignment PIN_B10 -to MOSI
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to MOSI
+set_location_assignment PIN_B14 -to SCLK
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to SCLK
+set_location_assignment PIN_A9 -to MISO
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to MISO
+
+#============================================================
+# 2x13 GPIO Header
+#============================================================
+set_location_assignment PIN_A14 -to rev_rht
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to rev_rht
+set_location_assignment PIN_B16 -to rev_lft
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to rev_lft
+set_location_assignment PIN_C14 -to fwd_rht
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to fwd_rht
+set_location_assignment PIN_C16 -to fwd_lft
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to fwd_lft
+set_location_assignment PIN_C15 -to IR_mid_en
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to IR_mid_en
+set_location_assignment PIN_D16 -to IR_out_en
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to IR_out_en
+set_location_assignment PIN_D15 -to IR_in_en
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to IR_in_en
+set_location_assignment PIN_D14 -to buzz
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to buzz
+set_location_assignment PIN_F15 -to buzz_n
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to buzz_n
+#==== set_location_assignment PIN_F16 -to TX
+#==== set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to TX
+set_location_assignment PIN_F14 -to in_transit
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to in_transit
+
+#set_location_assignment PIN_G16 -to TX_dbg
+#set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to TX_dbg
+
+
+#==== Input only pins below =====
+set_location_assignment PIN_J14 -to RX
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to RX
+set_location_assignment PIN_E16 -to BC
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to BC
+set_location_assignment PIN_M16 -to OK2Move
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to OK2Move
+
+#============================================================
+# GPIO_1, Only used for Debug Output
+#============================================================
+#====set_location_assignment PIN_T9 -to RX_dbg
+#====set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to RX_dbg
+#====set_location_assignment PIN_F13 -to TX_dbg
+#====set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to TX_dbg
+#====set_location_assignment PIN_T15 -to TX_dbg
+#====set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to TX_dbg
+
+#============================================================
+# End of pin assignments
+#============================================================
+
+set_global_assignment -name PARTITION_NETLIST_TYPE SOURCE -section_id Top
+set_global_assignment -name PARTITION_FITTER_PRESERVATION_LEVEL PLACEMENT_AND_ROUTING -section_id Top
+set_global_assignment -name PARTITION_COLOR 16764057 -section_id Top
+set_global_assignment -name MIN_CORE_JUNCTION_TEMP 0
+set_global_assignment -name MAX_CORE_JUNCTION_TEMP 85
+set_global_assignment -name POWER_PRESET_COOLING_SOLUTION "23 MM HEAT SINK WITH 200 LFPM AIRFLOW"
+set_global_assignment -name POWER_BOARD_THERMAL_MODEL "NONE (CONSERVATIVE)"
+set_global_assignment -name STRATIX_DEVICE_IO_STANDARD "2.5 V"
+set_instance_assignment -name CURRENT_STRENGTH_NEW 4MA -to IR_in_en
+set_instance_assignment -name CURRENT_STRENGTH_NEW 4MA -to IR_mid_en
+set_instance_assignment -name CURRENT_STRENGTH_NEW 4MA -to IR_out_en
+set_instance_assignment -name CURRENT_STRENGTH_NEW 4MA -to MISO
+set_instance_assignment -name CURRENT_STRENGTH_NEW 4MA -to MOSI
+set_instance_assignment -name CURRENT_STRENGTH_NEW 4MA -to RST_n
+set_instance_assignment -name CURRENT_STRENGTH_NEW 4MA -to SCLK
+set_instance_assignment -name CURRENT_STRENGTH_NEW 4MA -to a2d_SS_n
+set_instance_assignment -name CURRENT_STRENGTH_NEW 4MA -to clk
+set_instance_assignment -name CURRENT_STRENGTH_NEW 4MA -to fwd_lft
+set_instance_assignment -name CURRENT_STRENGTH_NEW 4MA -to rev_rht
+set_instance_assignment -name CURRENT_STRENGTH_NEW 4MA -to rev_lft
+set_instance_assignment -name CURRENT_STRENGTH_NEW 4MA -to fwd_rht
+set_instance_assignment -name CURRENT_STRENGTH_NEW 4MA -to prox_en
+set_instance_assignment -name CURRENT_STRENGTH_NEW 4MA -to led[7]
+set_instance_assignment -name CURRENT_STRENGTH_NEW 4MA -to led[5]
+set_instance_assignment -name CURRENT_STRENGTH_NEW 4MA -to led[4]
+set_instance_assignment -name CURRENT_STRENGTH_NEW 4MA -to led[3]
+set_instance_assignment -name CURRENT_STRENGTH_NEW 4MA -to led[2]
+set_instance_assignment -name CURRENT_STRENGTH_NEW 4MA -to led[0]
+set_instance_assignment -name CURRENT_STRENGTH_NEW 4MA -to led[1]
+set_instance_assignment -name CURRENT_STRENGTH_NEW 4MA -to led[6]
+set_global_assignment -name VERILOG_FILE follower.v
+set_global_assignment -name SYSTEMVERILOG_FILE cmd_cntrl.sv
+set_global_assignment -name SYSTEMVERILOG_FILE dig_core.sv
+set_global_assignment -name SDC_FILE Follower.sdc
+set_global_assignment -name SYSTEMVERILOG_FILE UART_rcv.sv
+set_global_assignment -name SYSTEMVERILOG_FILE SPI_mstr16.sv
+set_global_assignment -name SYSTEMVERILOG_FILE pwm8.sv
+set_global_assignment -name SYSTEMVERILOG_FILE pwm.sv
+set_global_assignment -name SYSTEMVERILOG_FILE motor_cntrl.sv
+set_global_assignment -name SYSTEMVERILOG_FILE motion_cntrl.sv
+set_global_assignment -name SYSTEMVERILOG_FILE barcode.sv
+set_global_assignment -name SYSTEMVERILOG_FILE alu.sv
+set_global_assignment -name SYSTEMVERILOG_FILE A2D_intf.sv
+set_instance_assignment -name PARTITION_HIERARCHY root_partition -to | -section_id Top
