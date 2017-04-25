@@ -1,4 +1,4 @@
-module UART_tx(clk, rst_n, TX, trmt, tx_data, tx_done);
+module uart_tx(clk, rst_n, TX, trmt, tx_data, tx_done);
 
 // Define state type
 typedef enum reg {IDLE, TRANSMIT} STATE;

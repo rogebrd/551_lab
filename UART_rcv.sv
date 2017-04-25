@@ -1,4 +1,4 @@
-module UART_rcv(clk, rst_n, RX, rx_data, rx_rdy, rx_rdy_clr);
+module uart_rcv(clk, rst_n, RX, rx_data, rx_rdy, rx_rdy_clr);
 
 // Define state type
 typedef enum reg {IDLE, RECIEVE} STATE;

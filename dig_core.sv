@@ -41,4 +41,4 @@ module dig_core(clk,rst_n,cmd_rdy,cmd,clr_cmd_rdy,lft,rht,buzz,buzz_n,
 					
 
 endmodule
-  
+ 
