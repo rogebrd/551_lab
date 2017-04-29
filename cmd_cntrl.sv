@@ -89,15 +89,15 @@ assign buzz_n = ~buzz;
 // buzzer counter
 always_ff @(posedge clk, negedge rst_n) begin
 	if (!rst_n) buzz_cnt <= 16'h0000;
-	else if (buzz_cnt >= 16'h30D4) buzz_cnt <= 16'h0000;
+	else if (buzz_cnt >= 16'h186A) buzz_cnt <= 16'h0000;
 	else if (buzz_en) buzz_cnt <= buzz_cnt + 1'b1;
-	else buzz_cnt <= buzz_cnt;
+	else buzz_cnt <= 16'h0000;
 end
 
 // buzzer oscillator
 always_ff @(posedge clk, negedge rst_n) begin
 	if (!rst_n) buzz <= 1'b0;
-	else if (buzz_cnt >= 16'h30D4) buzz <= ~buzz;
+	else if (buzz_cnt >= 16'h186A) buzz <= ~buzz;
 	else buzz <= buzz;
 end
 
