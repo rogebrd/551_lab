@@ -17,6 +17,8 @@ reg [4:0] current_bit;
 reg next_bit, first_bit;
 STATE state, next_state;
 
+reg isFirst16;
+
 ////////////////////////////////////////////////////////////////////////////////
 // 32-bit shift register
 always @(posedge clk, negedge rst_n) begin
@@ -78,6 +80,7 @@ always_comb begin
 						count_start = 6'h02;
 						count_load = 1;
 						next_state = PREP;
+						isFirst16 = 1'b1;
 					end
 					else begin
 						next_state = WAITING;
@@ -114,9 +117,17 @@ always_comb begin
 		HIGH		:begin
 					SCLK = 1;
 					if (current_bit == 8'h00) begin
-						next_state = BACK_PORCH;
-						count_start = 6'h10;
-						count_load = 1;
+						if(isFirst16 == 1'b1) begin
+							next_state = HIGH;
+							first_bit = 1;
+							count_start = 6'h20;
+							count_load = 1;
+							isFirst16 = 1'b0;
+						end else begin
+							next_state = BACK_PORCH;
+							count_start = 6'h10;
+							count_load = 1;
+						end
 					end
 					else if (count == 30) begin
 						next_state = HIGH;
