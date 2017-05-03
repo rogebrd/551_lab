@@ -14,11 +14,16 @@ wire lft_pwm, rht_pwm;
 ////////////////////////////////////////////////////////////////////////////////
 // Get absolute value of left and right
 always_comb begin
-	if (lft[10] == 0)
+	if(lft == 11'h400)
+		abs_lft = 10'h3ff;
+	else if (lft[10] == 0)
 		abs_lft = lft[9:0];
 	else 
 		abs_lft = (~lft[9:0]) + 1'b1;
-	if (rht[10] == 0)
+
+	if(rht == 11'h400)
+		abs_rht = 10'h3ff;
+	else if (rht[10] == 0)
 		abs_rht = rht[9:0];
 	else 
 		abs_rht = (~rht[9:0]) + 1'b1;

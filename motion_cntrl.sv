@@ -45,7 +45,7 @@ module motion_cntrl(clk, rst_n, go, cnv_cmplt, A2D_res, strt_cnv, chnnl, IR_in_e
 	//pwm vars
 	reg pwm;
 	reg[7:0] duty = 8'h8C;
-	pwm_motion pwm_motion(.duty(duty), .rst_n(rst_n), .clk(clk), .out(pwm));
+	pwm_motion pwm_motion1(.duty(duty), .rst_n(rst_n), .clk(clk), .out(pwm));
 
 
 	//timer logic
@@ -170,7 +170,7 @@ module motion_cntrl(clk, rst_n, go, cnv_cmplt, A2D_res, strt_cnv, chnnl, IR_in_e
 		saturate = 0;
 		src0sel = 0;
 		src1sel = 0;
-		dst = 16'h0000;
+		
 		int_rst = 1;
 		int_enable = 0;
 		IR_in_en = 0;
@@ -190,14 +190,17 @@ module motion_cntrl(clk, rst_n, go, cnv_cmplt, A2D_res, strt_cnv, chnnl, IR_in_e
 					dst2lft = 1'b0;
 					dst2rht = 1'b0;
 					chnnl_cntr = 3'b000;
+					dst = 16'h0000;
 					if(go) begin
 						//reset chnnl and accum
 						n_state = CONV;
 						chnnl = 3'b001;
 						timer_rst = 1;
-					end else
+					end else begin 
 						n_state = RESET;
+						chnnl = 3'b000;
 					end
+				end
 			CONV:	begin
 						//enable pwm sensors
 						if(chnnl_cntr == 0) begin
@@ -205,12 +208,12 @@ module motion_cntrl(clk, rst_n, go, cnv_cmplt, A2D_res, strt_cnv, chnnl, IR_in_e
 							IR_mid_en = 0;
 							IR_out_en = 0;
 						end
-						else if(chnnl_cntr == 2) begin
+						else if(chnnl_cntr == 3) begin
 							IR_in_en = 0;
 							IR_mid_en = pwm;
 							IR_out_en = 0;
 						end
-						else if(chnnl_cntr == 4) begin
+						else if(chnnl_cntr == 5) begin
 							IR_in_en = 0;
 							IR_mid_en = 0;
 							IR_out_en = pwm;
@@ -224,11 +227,11 @@ module motion_cntrl(clk, rst_n, go, cnv_cmplt, A2D_res, strt_cnv, chnnl, IR_in_e
 							n_state = CONV;
 					end
 			A2D_1:	begin
-						//wait until conversion is complete and reset timer and inc chnnl
+					//wait until conversion is complete and reset timer and inc chnnl
 						if(cnv_cmplt) begin
 							n_state = ALU_1;
 							timer_rst = 1;		//clear timer pre-ALU calculations 
-//							chnnl_cntr = chnnl_cntr + 1;
+							chnnl_cntr = chnnl_cntr + 1;
 						end else
 							n_state = A2D_1;
 					end
@@ -242,19 +245,16 @@ module motion_cntrl(clk, rst_n, go, cnv_cmplt, A2D_res, strt_cnv, chnnl, IR_in_e
 							chnnl = 7;
 
 						//enable timer
-						timer_rst = 1'b0;
+						//timer_rst = 1'b0;
 						timer_en = 1'b1;
 
 						//perform calculations based off channel
 						case(chnnl_cntr)
-							//0: 					//chnnl(0) 2. Accum = Accum + IR_in_rht;
-							3'b010: mult2 = 1'b1;	//chnnl(2) 4. Accum = Accum + IR_mid_rht * 2;
-							3'b100: mult4 = 1'b1;	//chnnl(4) 6. Accum = Accum + IR_out_rht * 4;
+							//1: 			//chnnl_cntr(1) 2. Accum = Accum + IR_in_rht;
+							3'b011: mult2 = 1'b1;	//chnnl_cntr(3) 4. Accum = Accum + IR_mid_rht * 2;
+							3'b101: mult4 = 1'b1;	//chnnl_cntr(5) 6. Accum = Accum + IR_out_rht * 4;
 						endcase
 						dst2Accum = 1'b1;
-
-						//incrememnt channel counter
-						chnnl_cntr = chnnl_cntr + 1;
 
 						//wait 32 clks
 						if(timer == 64'h0000020) begin
@@ -309,7 +309,8 @@ module motion_cntrl(clk, rst_n, go, cnv_cmplt, A2D_res, strt_cnv, chnnl, IR_in_e
 						//do PI calculations with ALU and update chnnl
 						//NOTE: chnnl is now being used to track PI math step
 						n_state = PI_CNTRL; //default
-						
+						int_rst = 0;
+						int_enable = 1;
 						case(chnnl_cntr)
 							3'b000: begin 	//8. Intgrl = Error >> 4 + Intgrl; *every 4 calc cycles
 									src1sel = 3'b011;
