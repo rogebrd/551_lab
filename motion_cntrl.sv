@@ -17,6 +17,7 @@ module motion_cntrl(clk, rst_n, go, cnv_cmplt, A2D_res, strt_cnv, chnnl, IR_in_e
 	reg[2:0] src0sel, src1sel;
 	reg sub, multiply, mult2, mult4, saturate;
 	reg dst2Accum, dst2Err, dst2Int, dst2Icmp, dst2Pcmp, dst2lft, dst2rht;
+	reg rst_accum;
 	localparam Iterm = 12'h500;
 	localparam Pterm = 14'h3680;
 	reg[15:0] dst;
@@ -25,7 +26,7 @@ module motion_cntrl(clk, rst_n, go, cnv_cmplt, A2D_res, strt_cnv, chnnl, IR_in_e
 	
 	//timer variables
 	reg timer_rst, timer_en;
-	reg[63:0] timer;
+	reg[15:0] timer;
 	
 	//channel counter
 	//read 1, 0, 4, 2, 3, 7
@@ -33,7 +34,7 @@ module motion_cntrl(clk, rst_n, go, cnv_cmplt, A2D_res, strt_cnv, chnnl, IR_in_e
 	reg[2:0] pi_cntr;
 	
 	//states
-	typedef enum {RESET, CONV, A2D_1, ALU_1, A2D_2, ALU_2, PI_CNTRL} State;
+	typedef enum reg [2:0] {RESET, CONV, A2D_1, ALU_1, A2D_2, ALU_2, PI_CNTRL} State;
 	State n_state, state;
 	
 	//output vars
@@ -52,9 +53,9 @@ module motion_cntrl(clk, rst_n, go, cnv_cmplt, A2D_res, strt_cnv, chnnl, IR_in_e
 	//timer logic
 	always_ff @ (posedge clk, negedge rst_n) begin
 		if(!rst_n)
-			timer <= 64'h0000000000000000;
+			timer <= 16'h0000000000000000;
 		else if(timer_rst)
-			timer <= 64'h0000000000000000;
+			timer <= 16'h0000000000000000;
 		else if(timer_en)
 			timer <= timer + 1;
 	end
@@ -97,6 +98,8 @@ module motion_cntrl(clk, rst_n, go, cnv_cmplt, A2D_res, strt_cnv, chnnl, IR_in_e
 		if(!rst_n)
 			Accum <= 16'h0000;
 		else if(!go)
+			Accum <= 16'h0000;
+		else if(rst_accum)
 			Accum <= 16'h0000;
 		else if(dst2Accum)
 			Accum <= dst;
@@ -178,8 +181,15 @@ module motion_cntrl(clk, rst_n, go, cnv_cmplt, A2D_res, strt_cnv, chnnl, IR_in_e
 		IR_mid_en = 0;
 		IR_out_en = 0;
 		//chnnl = 3'b000;
+		rst_accum = 0;
 		
-		
+		dst2Accum = 1'b0;
+		dst2Err = 1'b0;
+		dst2Icmp = 1'b0;
+		dst2Pcmp = 1'b0;
+		dst2lft = 1'b0;
+		dst2rht = 1'b0;
+		dst2Int = 1'b0;
 		case(state)
 			RESET: 	begin
 					//reset all
@@ -191,12 +201,12 @@ module motion_cntrl(clk, rst_n, go, cnv_cmplt, A2D_res, strt_cnv, chnnl, IR_in_e
 					dst2lft = 1'b0;
 					dst2rht = 1'b0;
 					chnnl_cntr = 3'b000;
-					dst = 16'h0000;
 					if(go) begin
 						//reset chnnl and accum
 						n_state = CONV;
 						chnnl = 3'b001;
 						timer_rst = 1;
+						rst_accum = 1;
 					end else
 						n_state = RESET;
 					end
@@ -219,7 +229,7 @@ module motion_cntrl(clk, rst_n, go, cnv_cmplt, A2D_res, strt_cnv, chnnl, IR_in_e
 						end
 						//enable timer and wait 4096 clocks
 						timer_en = 1;
-						if(timer == 64'd4095) begin
+						if(timer == 16'd4095) begin
 							n_state = A2D_1;
 							strt_cnv = 1;
 						end else
@@ -252,10 +262,13 @@ module motion_cntrl(clk, rst_n, go, cnv_cmplt, A2D_res, strt_cnv, chnnl, IR_in_e
 							3'b011: mult2 = 1'b1;	//chnnl(3) 4. Accum = Accum + IR_mid_rht * 2;
 							3'b101: mult4 = 1'b1;	//chnnl(5) 6. Accum = Accum + IR_out_rht * 4;
 						endcase
-						dst2Accum = 1'b1;
+						if (timer == 16'h0000)
+							dst2Accum = 1'b1;
+						else
+							dst2Accum = 1'b0;
 
 						//wait 32 clks
-						if(timer == 64'h0000020) begin
+						if(timer == 16'h0020) begin
 							n_state = A2D_2;
 							strt_cnv = 1;
 						end else
@@ -321,7 +334,7 @@ module motion_cntrl(clk, rst_n, go, cnv_cmplt, A2D_res, strt_cnv, chnnl, IR_in_e
 							3'b000: begin 	//8. Intgrl = Error >> 4 + Intgrl; *every 4 calc cycles
 									src1sel = 3'b011;
 									src0sel = 3'b001;
-									mult4 = 1'b1;
+									//mult4 = 1'b1;
 									saturate = 1'b1;
 									if (int_dec == 2'b11) begin
 										dst2Int = 1'b1;
@@ -330,7 +343,7 @@ module motion_cntrl(clk, rst_n, go, cnv_cmplt, A2D_res, strt_cnv, chnnl, IR_in_e
 									end
 									end
 							3'b001: begin 	//9. Icomp = Iterm * Intgrl;
-									src1sel = 3'b010;
+									src1sel = 3'b001;
 									src0sel = 3'b001;
 									multiply = 1'b1;
 									if (int_dec == 2'b10) begin
@@ -357,7 +370,7 @@ module motion_cntrl(clk, rst_n, go, cnv_cmplt, A2D_res, strt_cnv, chnnl, IR_in_e
 									end
 							3'b100: begin 	//12. rht_reg = Accum - Icomp;
 									src1sel = 3'b000;
-									src0sel = 3'b011;
+									src0sel = 3'b010;
 									saturate = 1'b1;
 									sub = 1'b1;
 									pi_cntr = 3'b101;
