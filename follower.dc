@@ -1,0 +1,35 @@
+#################################################################################
+# Follower Synthesis Script Brad Rogers, Melanie Rogers, Zach Zhou, Alex Valois #
+#################################################################################
+
+# Load file
+read_file -format verilog {alu.v, pwm_cntrl.v, pwm.v}
+read_file -format sverilog {barcode.sv, cmd_cntrl.sv, motion_cntrl.sv, dig_core.sv, UART_rcv.sv, motor_cntrl.sv, SPI_mstr.sv, A2D_intf.sv}
+read_file -format verilog {follower.v}
+set current_design Follower
+
+# Define clock
+create_clock -name "clk" -period 2.5 -waveform { 0 1.25 } { clk }
+set_dont_touch_network [find port clk]
+set_clock_uncertainty 0.1 clk
+
+# Get all inputs minus clk
+set prim_inputs [remove_from_collection [all_inputs] [find port clk]]
+
+# Set input constraints
+set_input_delay -clock clk 0.5 [copy_collection $prim_inputs]
+set_driving_cell -lib_cell ND2D2BWP -library tcbn40lpbwptc [copy_collection $prim_inputs]
+
+# Set output constraints
+set_output_delay -clock clk 0.5 [all_outputs]
+set_load 0.1 [all_outputs]
+set_max_transition 0.15 [current_design]
+set_wire_load_model -name TSMC32K_Lowk_Conservative -library tcbn40lpbwptc
+
+# Synthesize
+uniquify
+ungroup -all -flatten
+compile -map_effort medium
+report_timing -delay max > timingFollower.rpt
+report_area > areaFollower.rpt
+write -format verilog Follower -output follower.vg
