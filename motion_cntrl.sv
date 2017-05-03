@@ -20,7 +20,8 @@ module motion_cntrl(clk, rst_n, go, cnv_cmplt, A2D_res, strt_cnv, chnnl, IR_in_e
 	reg rst_accum;
 	localparam Iterm = 12'h500;
 	localparam Pterm = 14'h3680;
-	reg[15:0] dst;
+	
+	wire[15:0] dst;
 	reg[1:0] int_dec;
 	reg int_rst, int_enable;
 	
@@ -182,7 +183,6 @@ module motion_cntrl(clk, rst_n, go, cnv_cmplt, A2D_res, strt_cnv, chnnl, IR_in_e
 		IR_out_en = 0;
 		//chnnl = 3'b000;
 		rst_accum = 0;
-		
 		dst2Accum = 1'b0;
 		dst2Err = 1'b0;
 		dst2Icmp = 1'b0;
@@ -192,14 +192,13 @@ module motion_cntrl(clk, rst_n, go, cnv_cmplt, A2D_res, strt_cnv, chnnl, IR_in_e
 		dst2Int = 1'b0;
 		case(state)
 			RESET: 	begin
-					//reset all
 					dst2Accum = 1'b0;
 					dst2Err = 1'b0;
 					dst2Icmp = 1'b0;
-					dst2Int = 1'b0;
 					dst2Pcmp = 1'b0;
 					dst2lft = 1'b0;
 					dst2rht = 1'b0;
+					dst2Int = 1'b0;
 					chnnl_cntr = 3'b000;
 					if(go) begin
 						//reset chnnl and accum
@@ -330,65 +329,60 @@ module motion_cntrl(clk, rst_n, go, cnv_cmplt, A2D_res, strt_cnv, chnnl, IR_in_e
 						dst2lft = 1'b0;
 						dst2rht = 1'b0;
 						dst2Int = 1'b0;
+		
 						case(pi_cntr)
 							3'b000: begin 	//8. Intgrl = Error >> 4 + Intgrl; *every 4 calc cycles
 									src1sel = 3'b011;
 									src0sel = 3'b001;
 									//mult4 = 1'b1;
 									saturate = 1'b1;
-									if (int_dec == 2'b11) begin
-										dst2Int = 1'b1;
-										int_rst = 1;
-										pi_cntr = 3'b001;
-									end
+									dst2Int = &int_dec;
+									pi_cntr = 3'b001;
+									if(int_dec == 2'b11)
+										int_rst = 1'b1;
 									end
 							3'b001: begin 	//9. Icomp = Iterm * Intgrl;
 									src1sel = 3'b001;
 									src0sel = 3'b001;
 									multiply = 1'b1;
-									if (int_dec == 2'b10) begin
-										dst2Icmp = 1'b1;
-										int_rst = 1;
-										pi_cntr = 3'b010;
-									end
+									dst2Icmp = 1'b1;
+									pi_cntr = 3'b010;
 									end
 							3'b010: begin	//10. Pcomp = Error * Pterm;
 									src1sel = 3'b010;
 									src0sel = 3'b100;
 									multiply = 1'b1;
-									if (int_dec == 2'b10) begin
-										dst2Pcmp = 1'b1;
-										pi_cntr = 3'b011;
-									end
+									dst2Pcmp = 1'b1;
+									pi_cntr = 3'b011;
 									end
 							3'b011: begin 	//11. Accum = Fwd - Pcomp;
 									src1sel = 3'b100;
 									src0sel = 3'b011;
 									sub = 1'b1;	
-									pi_cntr = 3'b100;
 									dst2Accum = 1'b1;
+									pi_cntr = 3'b100;
 									end
 							3'b100: begin 	//12. rht_reg = Accum - Icomp;
 									src1sel = 3'b000;
 									src0sel = 3'b010;
 									saturate = 1'b1;
 									sub = 1'b1;
-									pi_cntr = 3'b101;
 									dst2rht = 1'b1;
+									pi_cntr = 3'b101;
 									end
 							3'b101: begin 	//13. Accum = Fwd + Pcomp;
 									src1sel = 3'b100;
 									src0sel = 3'b011;
-									pi_cntr = 3'b110;
 									dst2Accum = 1'b1;
+									pi_cntr = 3'b110;
 									end
 							3'b110: begin 	//14. lft_reg = Accum + Icomp;
 									src1sel = 3'b000;
 									src0sel = 3'b010;
 									saturate = 1'b1;
-									pi_cntr = 3'b000;
 									dst2lft = 1'b1;
-									n_state = RESET;	//back to reset state
+									pi_cntr = 3'b000;
+									n_state = RESET;
 									end
 						endcase
 					end
