@@ -6,7 +6,7 @@ module motion_cntrl(clk, rst_n, go, cnv_cmplt, A2D_res, strt_cnv, chnnl, IR_in_e
 	
 	//outputs
 	output reg strt_cnv;
-	output IR_in_en, IR_mid_en, IR_out_en;
+	output reg IR_in_en, IR_mid_en, IR_out_en;
 	output reg[2:0] chnnl;
 	output[7:0] LEDs;
 	output[10:0] lft, rht;
@@ -32,10 +32,9 @@ module motion_cntrl(clk, rst_n, go, cnv_cmplt, A2D_res, strt_cnv, chnnl, IR_in_e
 	//channel counter
 	//read 1, 0, 4, 2, 3, 7
 	reg[2:0] chnnl_cntr;
-	reg[2:0] pi_cntr;
 	
 	//states
-	typedef enum reg [2:0] {RESET, CONV, A2D_1, ALU_1, A2D_2, ALU_2, PI_CNTRL} State;
+	typedef enum reg [3:0] {RESET, CONV, A2D_1, ALU_1, A2D_2, ALU_2, PI_CNTRL_1, PI_CNTRL_2, PI_CNTRL_3, PI_CNTRL_4, PI_CNTRL_5, PI_CNTRL_6, PI_CNTRL_7} State;
 	State n_state, state;
 	
 	//output vars
@@ -52,9 +51,9 @@ module motion_cntrl(clk, rst_n, go, cnv_cmplt, A2D_res, strt_cnv, chnnl, IR_in_e
 
 
 	//IR_enables
-	assign IR_in_en = (chnnl_cntr == 3'h0 || chnnl_cntr == 3'h1) ? pwm : 0;
-	assign IR_mid_en = (chnnl_cntr == 3'h2 || chnnl_cntr == 3'h3) ? pwm : 0;
-	assign IR_out_en = (chnnl_cntr == 3'h4 || chnnl_cntr == 3'h5) ? pwm : 0;
+	assign IR_in_en = (state != RESET && (chnnl == 3'h1 || chnnl == 3'h0)) ? pwm : 0;
+	assign IR_mid_en = (state != RESET && (chnnl == 3'h4 || chnnl == 3'h2)) ? pwm : 0;
+	assign IR_out_en = (state != RESET && (chnnl == 3'h3 || chnnl == 3'h7)) ? pwm : 0;
 
 	//timer logic
 	always_ff @ (posedge clk, negedge rst_n) begin
@@ -181,7 +180,7 @@ module motion_cntrl(clk, rst_n, go, cnv_cmplt, A2D_res, strt_cnv, chnnl, IR_in_e
 		src0sel = 3'b000;
 		src1sel = 3'b000;
 		
-		int_rst = 1;
+		int_rst = 0;
 		int_enable = 0;
 
 		//chnnl = 3'b000;
@@ -304,89 +303,74 @@ module motion_cntrl(clk, rst_n, go, cnv_cmplt, A2D_res, strt_cnv, chnnl, IR_in_e
 						
 						//check if seen 6 channels (0-5)
 						if(chnnl_cntr == 3'b110) begin
-							n_state = PI_CNTRL;
+							n_state = PI_CNTRL_1;
 							//chnnl_cntr = 3'b000;	//update for PI calc
-							pi_cntr = 3'b000;
 						end
 						else begin
 							n_state = CONV;
 						end
 					end
-			PI_CNTRL: begin
+			PI_CNTRL_1: begin
 						//do PI calculations with ALU and update chnnl
 						//NOTE: chnnl is now being used to track PI math step
-						n_state = PI_CNTRL; //default
-						int_enable = 0;
-						int_rst = 0;
-						dst2Accum = 1'b0;
-						dst2Err = 1'b0;
-						dst2Icmp = 1'b0;
-						dst2Pcmp = 1'b0;
-						dst2lft = 1'b0;
-						dst2rht = 1'b0;
-						dst2Int = 1'b0;
+						n_state = PI_CNTRL_2; //default
+						
 //						IR_in_en = 0;
 //						IR_mid_en = 0;
 //						IR_out_en = 0;
-		
-						case(pi_cntr)
-							3'b000: begin 	//8. Intgrl = Error >> 4 + Intgrl; *every 4 calc cycles
-									src1sel = 3'b011;
-									src0sel = 3'b001;
-									//mult4 = 1'b1;
-									saturate = 1'b1;
-									int_enable = 1;
-									dst2Int = &int_dec;
-									pi_cntr = 3'b001;
-									if(int_dec == 2'b11)
-										int_rst = 1'b1;
-									else
-										int_enable = 1'b1;
-									end
-							3'b001: begin 	//9. Icomp = Iterm * Intgrl;
-									src1sel = 3'b001;
-									src0sel = 3'b001;
-									multiply = 1'b1;
-									dst2Icmp = 1'b1;
-									pi_cntr = 3'b010;
-									end
-							3'b010: begin	//10. Pcomp = Error * Pterm;
-									src1sel = 3'b010;
-									src0sel = 3'b100;
-									multiply = 1'b1;
-									dst2Pcmp = 1'b1;
-									pi_cntr = 3'b011;
-									end
-							3'b011: begin 	//11. Accum = Fwd - Pcomp;
-									src1sel = 3'b100;
-									src0sel = 3'b011;
-									sub = 1'b1;	
-									dst2Accum = 1'b1;
-									pi_cntr = 3'b100;
-									end
-							3'b100: begin 	//12. rht_reg = Accum - Icomp;
-									src1sel = 3'b000;
-									src0sel = 3'b010;
-									saturate = 1'b1;
-									sub = 1'b1;
-									dst2rht = 1'b1;
-									pi_cntr = 3'b101;
-									end
-							3'b101: begin 	//13. Accum = Fwd + Pcomp;
-									src1sel = 3'b100;
-									src0sel = 3'b011;
-									dst2Accum = 1'b1;
-									pi_cntr = 3'b110;
-									end
-							3'b110: begin 	//14. lft_reg = Accum + Icomp;
-									src1sel = 3'b000;
-									src0sel = 3'b010;
-									saturate = 1'b1;
-									dst2lft = 1'b1;
-									pi_cntr = 3'b000;
-									n_state = RESET;
-									end
-						endcase
+						//8. Intgrl = Error >> 4 + Intgrl; *every 4 calc cycles
+						src1sel = 3'b011;
+						src0sel = 3'b001;
+
+						saturate = 1'b1;
+						int_enable = 1;
+						dst2Int = &int_dec;
+
+						if(int_dec == 2'b11)
+							int_rst = 1'b1;
+					end
+			PI_CNTRL_2: begin 	//9. Icomp = Iterm * Intgrl;
+						src1sel = 3'b001;
+						src0sel = 3'b001;
+						multiply = 1'b1;
+						dst2Icmp = 1'b1;
+						n_state = PI_CNTRL_3;
+					end
+			PI_CNTRL_3: begin	//10. Pcomp = Error * Pterm;
+						src1sel = 3'b010;
+						src0sel = 3'b100;
+						multiply = 1'b1;
+						dst2Pcmp = 1'b1;
+						n_state = PI_CNTRL_4;
+					end
+			PI_CNTRL_4: begin 	//11. Accum = Fwd - Pcomp;
+						src1sel = 3'b100;
+						src0sel = 3'b011;
+						sub = 1'b1;	
+						dst2Accum = 1'b1;
+						n_state = PI_CNTRL_5;
+					end
+			PI_CNTRL_5: begin 	//12. rht_reg = Accum - Icomp;
+						src1sel = 3'b000;
+						src0sel = 3'b010;
+						saturate = 1'b1;
+						sub = 1'b1;
+						dst2rht = 1'b1;
+						n_state = PI_CNTRL_6;
+					end
+			PI_CNTRL_6: begin 	//13. Accum = Fwd + Pcomp;
+						src1sel = 3'b100;
+						src0sel = 3'b011;
+						dst2Accum = 1'b1;
+						n_state = PI_CNTRL_7;
+					end
+			PI_CNTRL_7: begin 	//14. lft_reg = Accum + Icomp;
+						src1sel = 3'b000;
+						src0sel = 3'b010;
+						saturate = 1'b1;
+						dst2lft = 1'b1;
+									
+						n_state = RESET;
 					end
 		endcase
 	end
