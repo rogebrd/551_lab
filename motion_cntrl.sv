@@ -62,7 +62,7 @@ module motion_cntrl(clk, rst_n, go, cnv_cmplt, A2D_res, strt_cnv, chnnl, IR_in_e
 		else if(timer_rst)
 			timer <= 16'h0000;
 		else if(timer_en)
-			timer <= timer + 1;
+			timer <= timer + 1'b1;
 	end
 	
 	//state transition logic
@@ -90,7 +90,7 @@ module motion_cntrl(clk, rst_n, go, cnv_cmplt, A2D_res, strt_cnv, chnnl, IR_in_e
 		else if(int_rst)
 			int_dec <= 2'b00;
 		else if(int_enable)
-			int_dec <= int_dec + 1;
+			int_dec <= int_dec + 1'b1;
 		else
 			int_dec <= int_dec;
 	end
@@ -168,23 +168,23 @@ module motion_cntrl(clk, rst_n, go, cnv_cmplt, A2D_res, strt_cnv, chnnl, IR_in_e
 
 	//next state logic
 	always @ (*) begin
-		timer_en = 0;
-		timer_rst = 0;
-		strt_cnv = 0;
+		timer_en = 1'b0;
+		timer_rst = 1'b0;
+		strt_cnv = 1'b0;
 		//alu defaults
-		sub = 0;
-		multiply = 0;
-		mult2 = 0;
-		mult4 = 0;
-		saturate = 0;
+		sub = 1'b0;
+		multiply = 1'b0;
+		mult2 = 1'b0;
+		mult4 = 1'b0;
+		saturate = 1'b0;
 		src0sel = 3'b000;
 		src1sel = 3'b000;
 		
-		int_rst = 0;
-		int_enable = 0;
+		int_rst = 1'b0;
+		int_enable = 1'b0;
 
 		//chnnl = 3'b000;
-		rst_accum = 0;
+		rst_accum = 1'b0;
 		dst2Accum = 1'b0;
 		dst2Err = 1'b0;
 		dst2Icmp = 1'b0;
@@ -199,8 +199,8 @@ module motion_cntrl(clk, rst_n, go, cnv_cmplt, A2D_res, strt_cnv, chnnl, IR_in_e
 						//reset chnnl and accum
 						n_state = CONV;
 						chnnl = 3'b001;
-						timer_rst = 1;
-						rst_accum = 1;
+						timer_rst = 1'b1;
+						rst_accum = 1'b1;
 					end else
 						n_state = RESET;
 					end
@@ -222,10 +222,10 @@ module motion_cntrl(clk, rst_n, go, cnv_cmplt, A2D_res, strt_cnv, chnnl, IR_in_e
 //							IR_out_en = pwm;
 //						end
 						//enable timer and wait 4096 clocks
-						timer_en = 1;
+						timer_en = 1'b1;
 						if(timer == 16'd4095) begin
 							n_state = A2D_1;
-							strt_cnv = 1;
+							strt_cnv = 1'b1;
 						end else
 							n_state = CONV;
 					end
@@ -240,12 +240,12 @@ module motion_cntrl(clk, rst_n, go, cnv_cmplt, A2D_res, strt_cnv, chnnl, IR_in_e
 					end
 			ALU_1:	begin
 						//update channel
-						if(chnnl == 1)
-							chnnl = 0;
-						else if(chnnl == 4)
-							chnnl = 2;
-						else if(chnnl == 3)
-							chnnl = 7;
+						if(chnnl == 1'b1)
+							chnnl = 1'b0;
+						else if(chnnl == 3'h4)
+							chnnl = 2'h2;
+						else if(chnnl == 2'h3)
+							chnnl = 3'h7;
 
 						//enable timer
 						timer_en = 1'b1;
@@ -264,7 +264,7 @@ module motion_cntrl(clk, rst_n, go, cnv_cmplt, A2D_res, strt_cnv, chnnl, IR_in_e
 						//wait 32 clks
 						if(timer == 16'h0020) begin
 							n_state = A2D_2;
-							strt_cnv = 1;
+							strt_cnv = 1'b1;
 						end else
 							n_state = ALU_1;
 					end
@@ -272,19 +272,19 @@ module motion_cntrl(clk, rst_n, go, cnv_cmplt, A2D_res, strt_cnv, chnnl, IR_in_e
 						//wait until conversion is complete and reset timer and inc chnnl
 						if(cnv_cmplt) begin
 							n_state = ALU_2;
-							timer_rst = 1;	//clear timer pre-ALU calculations 
+							timer_rst = 1'b1;	//clear timer pre-ALU calculations 
 							chnnl_cntr = chnnl_cntr + 3'b001;
 						end else
 							n_state = A2D_2;
 					end
 			ALU_2:	begin
 						//update channel
-						if(chnnl == 0)
-							chnnl = 4;
-						else if(chnnl == 2)
-							chnnl = 3;
-						else if(chnnl == 7)
-							chnnl = 7;
+						if(chnnl == 1'b0)
+							chnnl = 3'h4;
+						else if(chnnl == 2'h2)
+							chnnl = 2'h3;
+						else if(chnnl == 3'h7)
+							chnnl = 3'h7;
 						
 						//perform calculations based off channel
 						sub = 1'b1;
@@ -323,7 +323,7 @@ module motion_cntrl(clk, rst_n, go, cnv_cmplt, A2D_res, strt_cnv, chnnl, IR_in_e
 						src0sel = 3'b001;
 
 						saturate = 1'b1;
-						int_enable = 1;
+						int_enable = 1'b1;
 						dst2Int = &int_dec;
 
 						if(int_dec == 2'b11)
