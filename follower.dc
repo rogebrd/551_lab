@@ -3,7 +3,7 @@
 #################################################################################
 
 # Load file
-read_file -format verilog {alu.v, pwm_cntrl.v, pwm.v}
+read_file -format verilog {alu.v, pwm_motion.v, pwm.v}
 read_file -format sverilog {barcode.sv, cmd_cntrl.sv, motion_cntrl.sv, dig_core.sv, UART_rcv.sv, motor_cntrl.sv, SPI_mstr.sv, A2D_intf.sv}
 read_file -format verilog {follower.v}
 set current_design Follower
