@@ -13,7 +13,7 @@ output reg done, SCLK, MOSI, SS_n;
 reg shift_en, shift_load;
 reg [5:0] count, count_start;
 reg count_en, count_load;
-reg [4:0] current_bit;
+reg [5:0] current_bit;
 reg next_bit, first_bit;
 STATE state, next_state;
 
@@ -44,8 +44,8 @@ end
 ////////////////////////////////////////////////////////////////////////////////
 // 5-bit count-down register for keeping track of which bit the transaction is on
 always @(posedge clk, negedge rst_n) begin
-	if (!rst_n) current_bit <= 5'h00;
-	else if (first_bit) current_bit <= 5'h10;
+	if (!rst_n) current_bit <= 6'h00;
+	else if (first_bit) current_bit <= 6'h20;
 	else if (next_bit) current_bit <= current_bit - 1;
 	else current_bit <= current_bit;
 end
@@ -117,17 +117,9 @@ always_comb begin
 		HIGH		:begin
 					SCLK = 1;
 					if (current_bit == 8'h00) begin
-						if(isFirst16 == 1'b1) begin
-							next_state = HIGH;
-							first_bit = 1;
-							count_start = 6'h20;
-							count_load = 1;
-							isFirst16 = 1'b0;
-						end else begin
-							next_state = BACK_PORCH;
-							count_start = 6'h10;
-							count_load = 1;
-						end
+						next_state = BACK_PORCH;
+						count_start = 6'h10;
+						count_load = 1;
 					end
 					else if (count == 30) begin
 						next_state = HIGH;
