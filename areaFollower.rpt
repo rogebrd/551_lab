@@ -1,0 +1,33 @@
+Warning: Design 'Follower' has '3' unresolved references. For more detailed information, use the "link" command. (UID-341)
+ 
+****************************************
+Report : area
+Design : Follower
+Version: L-2016.03
+Date   : Wed May  3 23:05:08 2017
+****************************************
+
+Library(s) Used:
+
+    tcbn40lpbwptc (File: /cae/apps/data/tsmclibs-2013/digital/Front_End/timing_power_noise/NLDM/tcbn40lpbwp_120b/tcbn40lpbwptc.db)
+
+Number of ports:                          416
+Number of nets:                          2861
+Number of cells:                         2247
+Number of combinational cells:           2004
+Number of sequential cells:               234
+Number of macros/black boxes:               0
+Number of buf/inv:                        461
+Number of references:                     194
+
+Combinational area:               3393.936017
+Buf/Inv area:                      411.012008
+Noncombinational area:            1006.009197
+Macro/Black Box area:                0.000000
+Net Interconnect area:      undefined  (Wire load has zero net area)
+
+Total cell area:                  4399.945215
+Total area:                 undefined
+
+Information: This design contains black box (unknown) components. (RPT-8)
+1

@@ -1,0 +1,152 @@
+Information: Building the design 'uart_rcv'. (HDL-193)
+Warning: Cannot find the design 'uart_rcv' in the library 'WORK'. (LBR-1)
+Information: Building the design 'motor_cntrl'. (HDL-193)
+Warning: Cannot find the design 'motor_cntrl' in the library 'WORK'. (LBR-1)
+Information: Building the design 'A2D_intf'. (HDL-193)
+Warning: Cannot find the design 'A2D_intf' in the library 'WORK'. (LBR-1)
+Warning: Unable to resolve reference 'uart_rcv' in 'Follower'. (LINK-5)
+Warning: Unable to resolve reference 'motor_cntrl' in 'Follower'. (LINK-5)
+Warning: Unable to resolve reference 'A2D_intf' in 'Follower'. (LINK-5)
+Warning: Design 'Follower' has '3' unresolved references. For more detailed information, use the "link" command. (UID-341)
+Information: Updating design information... (UID-85)
+Information: Timing loop detected. (OPT-150)
+	iCORE/iMTN/chnnl_reg[0]/E iCORE/iMTN/chnnl_reg[0]/Q U1338/I U1338/ZN iCORE/iMTN/C1064/A1 iCORE/iMTN/C1064/Z U1442/A1 U1442/ZN 
+Information: Timing loop detected. (OPT-150)
+	iCORE/iMTN/chnnl_reg[1]/E iCORE/iMTN/chnnl_reg[1]/Q iCORE/iMTN/C1063/A1 iCORE/iMTN/C1063/Z iCORE/iMTN/C1064/A2 iCORE/iMTN/C1064/Z U1442/A1 U1442/ZN 
+Warning: Disabling timing arc between pins 'A1' and 'Z' on cell 'iCORE/iMTN/C1064'
+         to break a timing loop. (OPT-314)
+Warning: Disabling timing arc between pins 'A1' and 'Z' on cell 'iCORE/iMTN/C1063'
+         to break a timing loop. (OPT-314)
+Warning: Disabling timing arc between pins 'A2' and 'Z' on cell 'iCORE/iMTN/C1063'
+         to break a timing loop. (OPT-314)
+Warning: Disabling timing arc between pins 'A2' and 'Z' on cell 'iCORE/iMTN/C1075'
+         to break a timing loop. (OPT-314)
+Warning: Disabling timing arc between pins 'A2' and 'Z' on cell 'iCORE/iMTN/C1067'
+         to break a timing loop. (OPT-314)
+Warning: Disabling timing arc between pins 'A2' and 'Z' on cell 'iCORE/iMTN/C1079'
+         to break a timing loop. (OPT-314)
+Warning: Disabling timing arc between pins 'A2' and 'Z' on cell 'iCORE/iMTN/C1082'
+         to break a timing loop. (OPT-314)
+Warning: Disabling timing arc between pins 'A2' and 'Z' on cell 'iCORE/iMTN/C1072'
+         to break a timing loop. (OPT-314)
+Warning: Disabling timing arc between pins 'A1' and 'Z' on cell 'iCORE/iMTN/C1076'
+         to break a timing loop. (OPT-314)
+Warning: Disabling timing arc between pins 'A1' and 'Z' on cell 'iCORE/iMTN/C1075'
+         to break a timing loop. (OPT-314)
+Warning: Disabling timing arc between pins 'A1' and 'Z' on cell 'iCORE/iMTN/C1068'
+         to break a timing loop. (OPT-314)
+Warning: Disabling timing arc between pins 'A1' and 'Z' on cell 'iCORE/iMTN/C1067'
+         to break a timing loop. (OPT-314)
+Warning: Disabling timing arc between pins 'A1' and 'Z' on cell 'iCORE/iMTN/C1080'
+         to break a timing loop. (OPT-314)
+Warning: Disabling timing arc between pins 'A1' and 'Z' on cell 'iCORE/iMTN/C1079'
+         to break a timing loop. (OPT-314)
+Warning: Disabling timing arc between pins 'A1' and 'Z' on cell 'iCORE/iMTN/C1083'
+         to break a timing loop. (OPT-314)
+Warning: Disabling timing arc between pins 'A1' and 'Z' on cell 'iCORE/iMTN/C1082'
+         to break a timing loop. (OPT-314)
+Warning: Disabling timing arc between pins 'A1' and 'Z' on cell 'iCORE/iMTN/C1073'
+         to break a timing loop. (OPT-314)
+Warning: Disabling timing arc between pins 'A1' and 'Z' on cell 'iCORE/iMTN/C1072'
+         to break a timing loop. (OPT-314)
+ 
+****************************************
+Report : timing
+        -path full
+        -delay max
+        -max_paths 1
+Design : Follower
+Version: L-2016.03
+Date   : Wed May  3 23:05:08 2017
+****************************************
+
+Operating Conditions: NCCOM   Library: tcbn40lpbwptc
+Wire Load Model Mode: segmented
+
+  Startpoint: iCORE/iMTN/state_reg[2]
+              (rising edge-triggered flip-flop clocked by clk)
+  Endpoint: iCORE/iMTN/lft_reg_reg[4]
+            (rising edge-triggered flip-flop clocked by clk)
+  Path Group: clk
+  Path Type: max
+
+  Des/Clust/Port     Wire Load Model       Library
+  ------------------------------------------------
+  Follower           TSMC32K_Lowk_Conservative
+                                           tcbn40lpbwptc
+  Follower_DW02_mult_0
+                     ZeroWireload          tcbn40lpbwptc
+  Follower_DW01_add_3
+                     ZeroWireload          tcbn40lpbwptc
+
+  Point                                                   Incr       Path
+  --------------------------------------------------------------------------
+  clock clk (rise edge)                                   0.00       0.00
+  clock network delay (ideal)                             0.00       0.00
+  iCORE/iMTN/state_reg[2]/CP (DFCND4BWP)                  0.00       0.00 r
+  iCORE/iMTN/state_reg[2]/Q (DFCND4BWP)                   0.15       0.15 r
+  U1038/ZN (INVD4BWP)                                     0.03       0.18 f
+  U1066/Z (OR3D4BWP)                                      0.09       0.26 f
+  U1042/ZN (ND2D8BWP)                                     0.03       0.30 r
+  U994/ZN (OAI32D2BWP)                                    0.03       0.33 f
+  U918/ZN (AOI211D2BWP)                                   0.08       0.40 r
+  U835/ZN (CKND2BWP)                                      0.03       0.43 f
+  U1012/ZN (AOI33XD4BWP)                                  0.05       0.48 r
+  U977/ZN (CKND2D8BWP)                                    0.04       0.52 f
+  iCORE/iMTN/alu1/mult_118/A[1] (Follower_DW02_mult_0)
+                                                          0.00       0.52 f
+  iCORE/iMTN/alu1/mult_118/U72/Z (AN2D4BWP)               0.04       0.56 f
+  iCORE/iMTN/alu1/mult_118/U65/ZN (ND2D3BWP)              0.01       0.57 r
+  iCORE/iMTN/alu1/mult_118/U251/ZN (INVD2BWP)             0.01       0.59 f
+  iCORE/iMTN/alu1/mult_118/S2_2_6/CO (FA1D1BWP)           0.11       0.70 f
+  iCORE/iMTN/alu1/mult_118/S2_3_6/CO (FA1D1BWP)           0.12       0.82 f
+  iCORE/iMTN/alu1/mult_118/S2_4_6/CO (FA1D1BWP)           0.12       0.94 f
+  iCORE/iMTN/alu1/mult_118/S2_5_6/CO (FA1D1BWP)           0.12       1.06 f
+  iCORE/iMTN/alu1/mult_118/U338/ZN (MAOI222D1BWP)         0.07       1.13 r
+  iCORE/iMTN/alu1/mult_118/U349/ZN (INVD1BWP)             0.03       1.15 f
+  iCORE/iMTN/alu1/mult_118/S2_7_6/CO (FA1D1BWP)           0.12       1.28 f
+  iCORE/iMTN/alu1/mult_118/U361/ZN (CKND2D2BWP)           0.02       1.30 r
+  iCORE/iMTN/alu1/mult_118/U363/ZN (ND3D3BWP)             0.03       1.34 f
+  iCORE/iMTN/alu1/mult_118/S2_9_6/CO (FA1D1BWP)           0.12       1.46 f
+  iCORE/iMTN/alu1/mult_118/S2_10_6/CO (FA1D1BWP)          0.12       1.58 f
+  iCORE/iMTN/alu1/mult_118/U275/ZN (CKND2D0BWP)           0.05       1.63 r
+  iCORE/iMTN/alu1/mult_118/U276/ZN (ND3D3BWP)             0.04       1.67 f
+  iCORE/iMTN/alu1/mult_118/S2_12_6/CO (FA1D1BWP)          0.13       1.80 f
+  iCORE/iMTN/alu1/mult_118/U415/Z (XOR3D2BWP)             0.12       1.92 f
+  iCORE/iMTN/alu1/mult_118/S4_5/S (FA1D1BWP)              0.08       2.00 r
+  iCORE/iMTN/alu1/mult_118/U115/Z (XOR2D2BWP)             0.08       2.08 f
+  iCORE/iMTN/alu1/mult_118/FS_1/A[17] (Follower_DW01_add_3)
+                                                          0.00       2.08 f
+  iCORE/iMTN/alu1/mult_118/FS_1/U5/ZN (CKND2D2BWP)        0.02       2.10 r
+  iCORE/iMTN/alu1/mult_118/FS_1/U138/ZN (OAI211D2BWP)     0.03       2.13 f
+  iCORE/iMTN/alu1/mult_118/FS_1/U137/Z (AN3D4BWP)         0.05       2.18 f
+  iCORE/iMTN/alu1/mult_118/FS_1/U73/ZN (INR2XD1BWP)       0.02       2.20 r
+  iCORE/iMTN/alu1/mult_118/FS_1/U62/ZN (OAI21D1BWP)       0.03       2.23 f
+  iCORE/iMTN/alu1/mult_118/FS_1/U133/ZN (AOI21D1BWP)      0.04       2.26 r
+  iCORE/iMTN/alu1/mult_118/FS_1/U134/ZN (XNR2D2BWP)       0.09       2.35 f
+  iCORE/iMTN/alu1/mult_118/FS_1/SUM[27] (Follower_DW01_add_3)
+                                                          0.00       2.35 f
+  iCORE/iMTN/alu1/mult_118/PRODUCT[29] (Follower_DW02_mult_0)
+                                                          0.00       2.35 f
+  U1067/ZN (NR2XD2BWP)                                    0.03       2.38 r
+  U1025/ZN (IND2D4BWP)                                    0.04       2.42 r
+  U772/ZN (ND2D4BWP)                                      0.05       2.46 f
+  U775/ZN (IOA21D2BWP)                                    0.03       2.50 r
+  U985/Z (CKAN2D1BWP)                                     0.05       2.55 r
+  iCORE/iMTN/lft_reg_reg[4]/D (EDFCNQD1BWP)               0.00       2.55 r
+  data arrival time                                                  2.55
+
+  clock clk (rise edge)                                   2.50       2.50
+  clock network delay (ideal)                             0.00       2.50
+  clock uncertainty                                      -0.10       2.40
+  iCORE/iMTN/lft_reg_reg[4]/CP (EDFCNQD1BWP)              0.00       2.40 r
+  library setup time                                     -0.09       2.31
+  data required time                                                 2.31
+  --------------------------------------------------------------------------
+  data required time                                                 2.31
+  data arrival time                                                 -2.55
+  --------------------------------------------------------------------------
+  slack (VIOLATED)                                                  -0.24
+
+
+1

@@ -1,0 +1,5 @@
+ECE 551 Final Project Report
+Project team 0xDEADBEEF - Brad and Melanie Rogers, Zach Zhou, and Alex Valois
+
+Final area: 4399.945215
+Final slack: -0.24
