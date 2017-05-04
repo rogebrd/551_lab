@@ -17,25 +17,22 @@ module motion_cntrl(clk, rst_n, go, cnv_cmplt, A2D_res, strt_cnv, chnnl, IR_in_e
 	reg[2:0] src0sel, src1sel;
 	reg sub, multiply, mult2, mult4, saturate;
 	reg dst2Accum, dst2Err, dst2Int, dst2Icmp, dst2Pcmp, dst2lft, dst2rht;
-	reg rst_accum;
 	localparam Iterm = 12'h500;
 	localparam Pterm = 14'h3680;
-	
-	wire[15:0] dst;
+	reg[15:0] dst;
 	reg[1:0] int_dec;
 	reg int_rst, int_enable;
 	
 	//timer variables
 	reg timer_rst, timer_en;
-	reg[15:0] timer;
+	reg[63:0] timer;
 	
 	//channel counter
 	//read 1, 0, 4, 2, 3, 7
 	reg[2:0] chnnl_cntr;
-	reg[2:0] pi_cntr;
 	
 	//states
-	typedef enum reg [2:0] {RESET, CONV, A2D_1, ALU_1, A2D_2, ALU_2, PI_CNTRL} State;
+	typedef enum {RESET, CONV, A2D_1, ALU_1, A2D_2, ALU_2, PI_CNTRL} State;
 	State n_state, state;
 	
 	//output vars
@@ -48,15 +45,15 @@ module motion_cntrl(clk, rst_n, go, cnv_cmplt, A2D_res, strt_cnv, chnnl, IR_in_e
 	//pwm vars
 	reg pwm;
 	reg[7:0] duty = 8'h8C;
-	pwm_motion pwm_motion(.duty(duty), .rst_n(rst_n), .clk(clk), .out(pwm));
+	pwm_motion pwm_motion1(.duty(duty), .rst_n(rst_n), .clk(clk), .out(pwm));
 
 
 	//timer logic
 	always_ff @ (posedge clk, negedge rst_n) begin
 		if(!rst_n)
-			timer <= 16'h0000000000000000;
+			timer <= 64'h0000000000000000;
 		else if(timer_rst)
-			timer <= 16'h0000000000000000;
+			timer <= 64'h0000000000000000;
 		else if(timer_en)
 			timer <= timer + 1;
 	end
@@ -99,8 +96,6 @@ module motion_cntrl(clk, rst_n, go, cnv_cmplt, A2D_res, strt_cnv, chnnl, IR_in_e
 		if(!rst_n)
 			Accum <= 16'h0000;
 		else if(!go)
-			Accum <= 16'h0000;
-		else if(rst_accum)
 			Accum <= 16'h0000;
 		else if(dst2Accum)
 			Accum <= dst;
@@ -182,64 +177,61 @@ module motion_cntrl(clk, rst_n, go, cnv_cmplt, A2D_res, strt_cnv, chnnl, IR_in_e
 		IR_mid_en = 0;
 		IR_out_en = 0;
 		//chnnl = 3'b000;
-		rst_accum = 0;
-		dst2Accum = 1'b0;
-		dst2Err = 1'b0;
-		dst2Icmp = 1'b0;
-		dst2Pcmp = 1'b0;
-		dst2lft = 1'b0;
-		dst2rht = 1'b0;
-		dst2Int = 1'b0;
+		
+		
 		case(state)
 			RESET: 	begin
+					//reset all
 					dst2Accum = 1'b0;
 					dst2Err = 1'b0;
 					dst2Icmp = 1'b0;
+					dst2Int = 1'b0;
 					dst2Pcmp = 1'b0;
 					dst2lft = 1'b0;
 					dst2rht = 1'b0;
-					dst2Int = 1'b0;
 					chnnl_cntr = 3'b000;
+					dst = 16'h0000;
 					if(go) begin
 						//reset chnnl and accum
 						n_state = CONV;
 						chnnl = 3'b001;
 						timer_rst = 1;
-						rst_accum = 1;
-					end else
+					end else begin 
 						n_state = RESET;
+						chnnl = 3'b000;
 					end
+				end
 			CONV:	begin
 						//enable pwm sensors
-						if(chnnl == 1) begin
+						if(chnnl_cntr == 0) begin
 							IR_in_en = pwm;
 							IR_mid_en = 0;
 							IR_out_en = 0;
 						end
-						else if(chnnl == 4) begin
+						else if(chnnl_cntr == 3) begin
 							IR_in_en = 0;
 							IR_mid_en = pwm;
 							IR_out_en = 0;
 						end
-						else if(chnnl == 3) begin
+						else if(chnnl_cntr == 5) begin
 							IR_in_en = 0;
 							IR_mid_en = 0;
 							IR_out_en = pwm;
 						end
 						//enable timer and wait 4096 clocks
 						timer_en = 1;
-						if(timer == 16'd4095) begin
+						if(timer == 64'd4095) begin
 							n_state = A2D_1;
 							strt_cnv = 1;
 						end else
 							n_state = CONV;
 					end
 			A2D_1:	begin
-						//wait until conversion is complete and reset timer and inc chnnl
+					//wait until conversion is complete and reset timer and inc chnnl
 						if(cnv_cmplt) begin
 							n_state = ALU_1;
 							timer_rst = 1;		//clear timer pre-ALU calculations 
-							chnnl_cntr = chnnl_cntr + 3'b001;
+							chnnl_cntr = chnnl_cntr + 1;
 						end else
 							n_state = A2D_1;
 					end
@@ -253,21 +245,19 @@ module motion_cntrl(clk, rst_n, go, cnv_cmplt, A2D_res, strt_cnv, chnnl, IR_in_e
 							chnnl = 7;
 
 						//enable timer
+						//timer_rst = 1'b0;
 						timer_en = 1'b1;
 
 						//perform calculations based off channel
 						case(chnnl_cntr)
-							//1: 					//chnnl(1) 2. Accum = Accum + IR_in_rht;
-							3'b011: mult2 = 1'b1;	//chnnl(3) 4. Accum = Accum + IR_mid_rht * 2;
-							3'b101: mult4 = 1'b1;	//chnnl(5) 6. Accum = Accum + IR_out_rht * 4;
+							//1: 			//chnnl_cntr(1) 2. Accum = Accum + IR_in_rht;
+							3'b011: mult2 = 1'b1;	//chnnl_cntr(3) 4. Accum = Accum + IR_mid_rht * 2;
+							3'b101: mult4 = 1'b1;	//chnnl_cntr(5) 6. Accum = Accum + IR_out_rht * 4;
 						endcase
-						if (timer == 16'h0000)
-							dst2Accum = 1'b1;
-						else
-							dst2Accum = 1'b0;
+						dst2Accum = 1'b1;
 
 						//wait 32 clks
-						if(timer == 16'h0020) begin
+						if(timer == 64'h0000020) begin
 							n_state = A2D_2;
 							strt_cnv = 1;
 						end else
@@ -277,8 +267,7 @@ module motion_cntrl(clk, rst_n, go, cnv_cmplt, A2D_res, strt_cnv, chnnl, IR_in_e
 						//wait until conversion is complete and reset timer and inc chnnl
 						if(cnv_cmplt) begin
 							n_state = ALU_2;
-							timer_rst = 1;	//clear timer pre-ALU calculations 
-							chnnl_cntr = chnnl_cntr + 3'b001;
+							timer_rst = 1;		//clear timer pre-ALU calculations 
 						end else
 							n_state = A2D_2;
 					end
@@ -307,82 +296,73 @@ module motion_cntrl(clk, rst_n, go, cnv_cmplt, A2D_res, strt_cnv, chnnl, IR_in_e
 						endcase
 						
 						//check if seen 6 channels (0-5)
-						if(chnnl_cntr == 3'b110) begin
+						if(chnnl_cntr == 3'b101) begin
 							n_state = PI_CNTRL;
-							//chnnl_cntr = 3'b000;	//update for PI calc
-							pi_cntr = 3'b000;
+							chnnl_cntr = 3'b000;	//update for PI calc
 						end
 						else begin
 							n_state = CONV;
+							chnnl_cntr = chnnl_cntr + 1;
 						end
 					end
 			PI_CNTRL: begin
 						//do PI calculations with ALU and update chnnl
 						//NOTE: chnnl is now being used to track PI math step
 						n_state = PI_CNTRL; //default
-						int_enable = 1;
 						int_rst = 0;
-						dst2Accum = 1'b0;
-						dst2Err = 1'b0;
-						dst2Icmp = 1'b0;
-						dst2Pcmp = 1'b0;
-						dst2lft = 1'b0;
-						dst2rht = 1'b0;
-						dst2Int = 1'b0;
-		
-						case(pi_cntr)
+						int_enable = 1;
+						case(chnnl_cntr)
 							3'b000: begin 	//8. Intgrl = Error >> 4 + Intgrl; *every 4 calc cycles
 									src1sel = 3'b011;
 									src0sel = 3'b001;
-									//mult4 = 1'b1;
+									mult4 = 1'b1;
 									saturate = 1'b1;
-									dst2Int = &int_dec;
-									pi_cntr = 3'b001;
-									if(int_dec == 2'b11)
-										int_rst = 1'b1;
+									chnnl_cntr = 3'b001;
+									if (int_dec == 2'b11) 
+										dst2Int = 1'b1;
 									end
 							3'b001: begin 	//9. Icomp = Iterm * Intgrl;
-									src1sel = 3'b001;
+									src1sel = 3'b010;
 									src0sel = 3'b001;
 									multiply = 1'b1;
+									chnnl_cntr = 3'b010;
 									dst2Icmp = 1'b1;
-									pi_cntr = 3'b010;
 									end
 							3'b010: begin	//10. Pcomp = Error * Pterm;
 									src1sel = 3'b010;
 									src0sel = 3'b100;
 									multiply = 1'b1;
+									chnnl_cntr = 3'b011;
 									dst2Pcmp = 1'b1;
-									pi_cntr = 3'b011;
 									end
 							3'b011: begin 	//11. Accum = Fwd - Pcomp;
 									src1sel = 3'b100;
 									src0sel = 3'b011;
 									sub = 1'b1;	
+									chnnl_cntr = 3'b100;
 									dst2Accum = 1'b1;
-									pi_cntr = 3'b100;
 									end
 							3'b100: begin 	//12. rht_reg = Accum - Icomp;
 									src1sel = 3'b000;
-									src0sel = 3'b010;
+									src0sel = 3'b011;
 									saturate = 1'b1;
 									sub = 1'b1;
+									chnnl_cntr = 3'b101;
 									dst2rht = 1'b1;
-									pi_cntr = 3'b101;
 									end
 							3'b101: begin 	//13. Accum = Fwd + Pcomp;
 									src1sel = 3'b100;
 									src0sel = 3'b011;
+									chnnl_cntr = 3'b110;
 									dst2Accum = 1'b1;
-									pi_cntr = 3'b110;
 									end
 							3'b110: begin 	//14. lft_reg = Accum + Icomp;
 									src1sel = 3'b000;
 									src0sel = 3'b010;
 									saturate = 1'b1;
+									chnnl_cntr = 3'b000;
 									dst2lft = 1'b1;
-									pi_cntr = 3'b000;
-									n_state = RESET;
+									n_state = RESET;	//back to reset state
 									end
 						endcase
 					end
