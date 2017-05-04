@@ -58,9 +58,9 @@ module motion_cntrl(clk, rst_n, go, cnv_cmplt, A2D_res, strt_cnv, chnnl, IR_in_e
 	//timer logic
 	always_ff @ (posedge clk, negedge rst_n) begin
 		if(!rst_n)
-			timer <= 16'h0000;
+			timer <= 1'b0;
 		else if(timer_rst)
-			timer <= 16'h0000;
+			timer <= 1'b0;
 		else if(timer_en)
 			timer <= timer + 1'b1;
 	end
@@ -76,9 +76,9 @@ module motion_cntrl(clk, rst_n, go, cnv_cmplt, A2D_res, strt_cnv, chnnl, IR_in_e
 	//fwd control
 	always_ff @(posedge clk, negedge rst_n) begin
 		if (!rst_n)
-			Fwd <= 12'h000;
+			Fwd <= 1'b0;
 		else if (~go) // if go deasserted Fwd knocked down so
-			Fwd <= 12'b000; // we accelerate from zero on next start.
+			Fwd <= 1'b0; // we accelerate from zero on next start.
 		else if (dst2Int & ~&Fwd[10:8]) // 43.75% full speed
 			Fwd <= Fwd + 1'b1;
 	end
@@ -86,9 +86,9 @@ module motion_cntrl(clk, rst_n, go, cnv_cmplt, A2D_res, strt_cnv, chnnl, IR_in_e
 	//implement int_dec to control integrl
 	always_ff @(posedge clk, negedge rst_n) begin
 		if(!rst_n)
-			int_dec <= 2'b00;
+			int_dec <= 1'b0;
 		else if(int_rst)
-			int_dec <= 2'b00;
+			int_dec <= 1'b0;
 		else if(int_enable)
 			int_dec <= int_dec + 1'b1;
 		else
@@ -101,56 +101,56 @@ module motion_cntrl(clk, rst_n, go, cnv_cmplt, A2D_res, strt_cnv, chnnl, IR_in_e
 	//code for Accum
 	always_ff @ (posedge clk, negedge rst_n) begin
 		if(!rst_n)
-			Accum <= 16'h0000;
+			Accum <= 1'b0;
 		else if(!go)
-			Accum <= 16'h0000;
+			Accum <= 1'b0;
 		else if(rst_accum)
-			Accum <= 16'h0000;
+			Accum <= 1'b0;
 		else if(dst2Accum)
 			Accum <= dst;
 	end
 	//code for Pcomp
 	always_ff @ (posedge clk, negedge rst_n) begin
 		if(!rst_n)
-			Pcomp <= 16'h000;
+			Pcomp <= 1'b0;
 		else if(!go)
-			Pcomp <= 16'h000;
+			Pcomp <= 1'b0;
 		else if(dst2Pcmp)
 			Pcomp <= dst;
 	end
 	//code for Error
 	always_ff @ (posedge clk, negedge rst_n) begin
 		if(!rst_n)
-			Error <= 12'h000;
+			Error <= 1'b0;
 		else if(!go)
-			Error <= 12'h000;
+			Error <= 1'b0;
 		else if(dst2Err)
 			Error <= dst[11:0];
 	end
 	//code for Icomp
 	always_ff @ (posedge clk, negedge rst_n) begin
 		if(!rst_n)
-			Icomp <= 12'h000;
+			Icomp <= 1'b0;
 		else if(!go)
-			Icomp <= 12'h000;
+			Icomp <= 1'b0;
 		else if(dst2Icmp)
 			Icomp <= dst[11:0];
 	end
 	//code for Error
 	always_ff @ (posedge clk, negedge rst_n) begin
 		if(!rst_n)
-			Intgrl <= 12'h000;
+			Intgrl <= 1'b0;
 		else if(!go)
-			Intgrl <= 12'h000;
+			Intgrl <= 1'b0;
 		else if(dst2Int)
 			Intgrl <= dst[11:0];
 	end
 	//code for rht_reg
 	always_ff @ (posedge clk, negedge rst_n) begin
 		if(!rst_n)
-			rht_reg <= 12'h000;
+			rht_reg <= 1'b0;
 		else if(!go)
-			rht_reg <= 12'h000;
+			rht_reg <= 1'b0;
 		else if(dst2rht)
 			rht_reg <= dst[11:0];
 	end
@@ -158,9 +158,9 @@ module motion_cntrl(clk, rst_n, go, cnv_cmplt, A2D_res, strt_cnv, chnnl, IR_in_e
 	//code for lft_reg
 	always_ff @ (posedge clk, negedge rst_n) begin
 		if(!rst_n)
-			lft_reg <= 12'h000;
+			lft_reg <= 1'b0;
 		else if(!go)
-			lft_reg <= 12'h000;
+			lft_reg <= 1'b0;
 		else if(dst2lft)
 			lft_reg <= dst[11:0];
 	end
@@ -177,8 +177,8 @@ module motion_cntrl(clk, rst_n, go, cnv_cmplt, A2D_res, strt_cnv, chnnl, IR_in_e
 		mult2 = 1'b0;
 		mult4 = 1'b0;
 		saturate = 1'b0;
-		src0sel = 3'b000;
-		src1sel = 3'b000;
+		src0sel = 1'b0;
+		src1sel = 1'b0;
 		
 		int_rst = 1'b0;
 		int_enable = 1'b0;
@@ -194,33 +194,17 @@ module motion_cntrl(clk, rst_n, go, cnv_cmplt, A2D_res, strt_cnv, chnnl, IR_in_e
 		dst2Int = 1'b0;
 		case(state)
 			RESET: 	begin
-					chnnl_cntr = 3'b000;
+					chnnl_cntr = 1'b0;
 					if(go) begin
 						//reset chnnl and accum
 						n_state = CONV;
-						chnnl = 3'b001;
+						chnnl = 1'b1;
 						timer_rst = 1'b1;
 						rst_accum = 1'b1;
 					end else
 						n_state = RESET;
 					end
 			CONV:	begin
-						//enable pwm sensors
-//						if(chnnl == 1) begin
-//							IR_in_en = pwm;
-//							IR_mid_en = 0;
-//							IR_out_en = 0;
-//						end
-//						else if(chnnl == 4) begin
-//							IR_in_en = 0;
-//							IR_mid_en = pwm;
-//							IR_out_en = 0;
-//						end
-//						else if(chnnl == 3) begin
-//							IR_in_en = 0;
-//							IR_mid_en = 0;
-//							IR_out_en = pwm;
-//						end
 						//enable timer and wait 4096 clocks
 						timer_en = 1'b1;
 						if(timer == 16'd4095) begin
@@ -256,7 +240,7 @@ module motion_cntrl(clk, rst_n, go, cnv_cmplt, A2D_res, strt_cnv, chnnl, IR_in_e
 							3'b011: mult2 = 1'b1;	//chnnl(3) 4. Accum = Accum + IR_mid_rht * 2;
 							3'b101: mult4 = 1'b1;	//chnnl(5) 6. Accum = Accum + IR_out_rht * 4;
 						endcase
-						if (timer == 16'h0000)
+						if (timer == 1'b0)
 							dst2Accum = 1'b1;
 						else
 							dst2Accum = 1'b0;
@@ -304,7 +288,6 @@ module motion_cntrl(clk, rst_n, go, cnv_cmplt, A2D_res, strt_cnv, chnnl, IR_in_e
 						//check if seen 6 channels (0-5)
 						if(chnnl_cntr == 3'b110) begin
 							n_state = PI_CNTRL_1;
-							//chnnl_cntr = 3'b000;	//update for PI calc
 						end
 						else begin
 							n_state = CONV;
@@ -314,10 +297,6 @@ module motion_cntrl(clk, rst_n, go, cnv_cmplt, A2D_res, strt_cnv, chnnl, IR_in_e
 						//do PI calculations with ALU and update chnnl
 						//NOTE: chnnl is now being used to track PI math step
 						n_state = PI_CNTRL_2; //default
-						
-//						IR_in_en = 0;
-//						IR_mid_en = 0;
-//						IR_out_en = 0;
 						//8. Intgrl = Error >> 4 + Intgrl; *every 4 calc cycles
 						src1sel = 3'b011;
 						src0sel = 3'b001;
