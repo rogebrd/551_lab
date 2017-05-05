@@ -112,6 +112,8 @@ always_comb begin
 					SCLK = 0;
 					if (count == 0) begin
 						next_state = HIGH;
+						shift_en_rx = 1;
+						next_bit = 1'b1;
 						count_start = 6'h20;
 						count_load = 1;
 					end
@@ -128,12 +130,6 @@ always_comb begin
 						next_state = BACK_PORCH;
 						count_start = 6'h10;
 						count_load = 1;
-					end
-					else if (count == 30) begin
-						next_state = HIGH;
-						count_en = 1;
-						shift_en_rx = 1;
-						next_bit = 1;
 					end
 					else if (count == 0) begin
 						next_state = LOW;
