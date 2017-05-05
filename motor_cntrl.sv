@@ -12,22 +12,29 @@ reg [9:0] abs_lft, abs_rht;
 wire lft_pwm, rht_pwm;
 
 ////////////////////////////////////////////////////////////////////////////////
-// Get absolute value of left and right
-always_comb begin
-	if(lft == 11'h400)
-		abs_lft = 10'h3ff;
-	else if (lft[10] == 0)
-		abs_lft = lft[9:0];
-	else 
-		abs_lft = (~lft[9:0]) + 1'b1;
+// Magnitudes from Input
 
-	if(rht == 11'h400)
-		abs_rht = 10'h3ff;
-	else if (rht[10] == 0)
-		abs_rht = rht[9:0];
-	else 
-		abs_rht = (~rht[9:0]) + 1'b1;
-end
+assign abs_lft = (lft[10]) ? ((lft[9:0]==10'h000) ? 10'h3ff : (11'h400 - lft[9:0])) : lft[9:0];
+assign abs_rht = (rht[10]) ? ((rht[9:0]==10'h000) ? 10'h3ff : (11'h400 - rht[9:0])) : rht[9:0];
+
+
+////////////////////////////////////////////////////////////////////////////////
+// Get absolute value of left and right
+//always_comb begin
+//	if(lft == 11'h400)
+//		abs_lft = 10'h3ff;
+//	else if (lft[10] == 0)
+//		abs_lft = lft[9:0];
+//	else 
+//		abs_lft = (~lft[9:0]) + 1'b1;
+//
+//	if(rht == 11'h400)
+//		abs_rht = 10'h3ff;
+//	else if (rht[10] == 0)
+//		abs_rht = rht[9:0];
+//	else 
+//		abs_rht = (~rht[9:0]) + 1'b1;
+//end
 
 ////////////////////////////////////////////////////////////////////////////////
 // Instantiate PWM module
