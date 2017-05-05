@@ -10,25 +10,35 @@ output reg [15:0] rd_data;
 output reg done, SCLK, MOSI, SS_n;
 
 // internal wiring
-reg shift_en, shift_load;
+reg shift_en_tx, shift_en_rx, shift_load;
 reg [5:0] count, count_start;
 reg count_en, count_load;
 reg [5:0] current_bit;
 reg next_bit, first_bit;
+reg [15:0] tx_data;
 STATE state, next_state;
 
 ////////////////////////////////////////////////////////////////////////////////
-// 32-bit shift register
+// 16-bit shift registers
+
+// rx register
 always @(posedge clk, negedge rst_n) begin
 	if (!rst_n) rd_data <= 16'h0000;
-	else if (shift_load) rd_data <= cmd;
-	else if (shift_en) rd_data <= {rd_data[14:0], MISO};
+	else if (shift_load) rd_data <= 16'h0000;
+	else if (shift_en_rx) rd_data <= {rd_data[14:0], MISO};
 	else rd_data <= rd_data;
+end
+// tx register
+always @(posedge clk, negedge rst_n) begin
+	if (!rst_n) tx_data <= 16'h0000;
+	else if (shift_load) tx_data <= cmd;
+	else if (shift_en_tx) tx_data <= {tx_data[14:0], 1'b0};
+	else tx_data <= tx_data;
 end
 
 ////////////////////////////////////////////////////////////////////////////////
 // MOSI definition
-assign MOSI = rd_data[15];
+assign MOSI = tx_data[15];
 
 ////////////////////////////////////////////////////////////////////////////////
 // 6-bit count-down register for waiting a set amount of clocks
@@ -40,7 +50,7 @@ always @(posedge clk, negedge rst_n) begin
 end
 
 ////////////////////////////////////////////////////////////////////////////////
-// 5-bit count-down register for keeping track of which bit the transaction is on
+// 6-bit count-down register for keeping track of which bit the transaction is on
 always @(posedge clk, negedge rst_n) begin
 	if (!rst_n) current_bit <= 6'h00;
 	else if (first_bit) current_bit <= 6'h20;
@@ -66,7 +76,8 @@ always_comb begin
 	count_load = 0;
 	count_en = 0;
 	shift_load = 0;
-	shift_en = 0;
+	shift_en_tx = 0;
+	shift_en_rx = 0;
 	next_bit = 0;
 	first_bit = 0;
 	case (state)
@@ -121,11 +132,12 @@ always_comb begin
 					else if (count == 30) begin
 						next_state = HIGH;
 						count_en = 1;
-						shift_en = 1;
+						shift_en_rx = 1;
 						next_bit = 1;
 					end
 					else if (count == 0) begin
 						next_state = LOW;
+						shift_en_tx = 1;
 						count_start = 6'h20;
 						count_load = 1;
 					end
